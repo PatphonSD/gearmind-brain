@@ -40,5 +40,5 @@ pnpm build
 
 คุณสามารถมีส่วนร่วมในโปรเจค GearMind ได้โดย:
 
-* รายงาน bug บน GitHub: [https://github.com/PatphonSD/GearMind/issues](https://github.com/PatphonSD/GearMind/issues)
-* ส่ง pull request บน GitHub: [https://github.com/PatphonSD/GearMind/pulls](https://github.com/PatphonSD/GearMind/pulls)
+* รายงาน bug บน GitHub: [https://github.com/PatphonSD/GearMind/issues](https://github.com/PatphonSD/gearmind-brain/issues)
+* ส่ง pull request บน GitHub: [https://github.com/PatphonSD/gearmind-brain/pulls](https://github.com/PatphonSD/GearMind/pulls)
