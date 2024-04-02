@@ -1,0 +1,2023 @@
+## Naval Propulsion Plants
+
+## [Condition Based Maintenance of Naval Propulsion Systems](https://archive.ics.uci.edu/ml/datasets/Condition+Based+Maintenance+of+Naval+Propulsion+Plants#)
+
+567.1KB (compressed)
+
+Data have been generated from a sophisticated simulator of a Gas Turbines (GT), mounted on a Frigate characterized by a COmbined Diesel eLectric And Gas (CODLAG) propulsion plant type.
+
+ ![](https://img.shields.io/badge/sector-mechanical-purple.svg)  ![](https://img.shields.io/badge/labeled-yes-blue.svg)  ![](https://img.shields.io/badge/time--series-no-red.svg)  ![](<https://img.shields.io/badge/simulation-yes-blue.svg>)
+
+#### Data Set Information
+
+| Data Set Characteristics | Attribute Characteristics | Associated Tasks |
+| ------------------------ | ------------------------- | ---------------- |
+| Multivariate             | Real                      | Regression       |
+
+| Number of Instances | Number of Attributes |      |      |
+| ------------------- | -------------------- | ---- | ---- |
+| 11934               | 16                   |      |      |
+
+> The experiments have been carried out by means of a numerical simulator of a naval vessel (Frigate) characterized by a Gas Turbine (GT) propulsion plant.
+>
+> The different blocks forming the complete simulator (Propeller, Hull, GT, Gear Box and Controller) have been developed and fine tuned over the year on several similar real propulsion plants.
+>
+> In this release of the simulator it is also possible to take into account the performance decay over time of the GT components such as GT compressor and turbines. The propulsion system behaviour has been described with this parameters:
+
+- Ship speed (linear function of the lever position lp). 
+- Compressor degradation coefficient kMc. 
+- Turbine degradation coefficient kMt. 
+
+so that each possible degradation state can be described by a combination of this triple (lp,kMt,kMc). 
+
+The range of decay of compressor and turbine has been sampled with an uniform grid of precision 0.001 so to have a good granularity of representation. In particular for the compressor decay state discretization the kMc coefficient has been investigated in the domain [1; 0.95], and the turbine coefficient in the domain [1; 0.975]. Ship speed has been investigated sampling the range of feasible speed from 3 knots to 27 knots with a granularity of representation equal to three knots. 
+
+A series of measures (16 features) which indirectly represents of the state of the system subject to performance decay has been acquired and stored in the dataset over the parameter's space. 
+
+Ship speed has been investigated sampling the range of feasible speed from 3 knots to 27 knots with a granularity of representation equal to three knots.
+
+A series of measures (16 features) which indirectly represents of the state of the system subject to performance decay has been acquired and stored in the dataset over the parameter's space. 
+
+#### Variables
+
+A 16-feature vector containing the GT measures at steady state of the physical asset:   
+
+1 - Lever position (lp) [ ]  
+2 - Ship speed (v) [knots]   
+3 - Gas Turbine shaft torque (GTT) [kN m]  
+4 - Gas Turbine rate of revolutions (GTn) [rpm]  
+5 - Gas Generator rate of revolutions (GGn) [rpm]  
+6 - Starboard Propeller Torque (Ts) [kN]  
+7 - Port Propeller Torque (Tp) [kN]  
+8 - HP Turbine exit temperature (T48) [C]  
+9 - GT Compressor inlet air temperature (T1) [C]  
+10 - GT Compressor outlet air temperature (T2) [C]  
+11 - HP Turbine exit pressure (P48) [bar]  
+12 - GT Compressor inlet air pressure (P1) [bar]  
+13 - GT Compressor outlet air pressure (P2) [bar]  
+14 - Gas Turbine exhaust gas pressure (Pexh) [bar]  
+15 - Turbine Injecton Control (TIC) [%]  
+16 - Fuel flow (mf) [kg/s]  
+
+17 - GT Compressor decay state coefficient. (kMc, 0.95~1) 
+
+17 - GT Compressor decay state coefficient. (kMc) 
+
+18 - GT Turbine decay state coefficient. (kMt)
+
+**NOTE**
+
+- Features are not normalized
+- Each feature vector is a row on the text file (18 elements in each row)
+
+#### Paper
+
+[Condition-Based Maintenance of Naval Propulsion Systems with supervised Data Analysis](https://github.com/makinarocks/awesome-industrial-machine-datasets/blob/master/data-explanation/Naval%20Propulsion%20Plants/Cipollini_etal_OE_2018_Condition_based_maintenance_of_naval_propulsion_systems_with_supervised_data_analysis.pdf) 
+
+**highlights**
+
+- A real-data validated model for the performance decay assessment of the main propulsion plant systems is presented.
+- Data-Driven models to investigate the problem of performing Condition-Based Maintenance on a ship propulsion system.
+- Several state-of-the-art supervised learning techniques are adopted.
+- Unsupervised [learning algorithms](https://www.sciencedirect.com/topics/engineering/learning-algorithm) for [anomaly detection](https://www.sciencedirect.com/topics/engineering/anomaly-detection).
+- The results confirm that it is possible to treat a CBM problem in a supervised fashion adopting regression techniques.
+
+Abstract
+
+Depending on the adopted strategy, impact of maintenance on overall expenses can remarkably vary.
+
+The behavior and interaction of the [main components](https://www.sciencedirect.com/topics/engineering/main-component) of Ship [Propulsion](https://www.sciencedirect.com/topics/earth-and-planetary-sciences/propulsion) Systems cannot be easily modeled with a priori physical knowledge, considering the large amount of variables influencing them. Data-Driven Models (DDMs), instead, exploit advanced statistical techniques to build models directly on the large amount of historical data collected by on-board [automation systems](https://www.sciencedirect.com/topics/engineering/automation-system), **without requiring any a [priori knowledge](https://www.sciencedirect.com/topics/engineering/priori-knowledge)**. DDMs are extremely useful when it comes to continuously monitoring the propulsion equipment and take decisions based on the [actual condition](https://www.sciencedirect.com/topics/engineering/actual-condition) of the propulsion plant. In this paper, the authors investigate the problem of performing Condition-Based Maintenance through the use of DDMs. In order to conceive this purpose, several state-of-the-art [supervised learning](https://www.sciencedirect.com/topics/earth-and-planetary-sciences/supervised-learning) techniques are adopted, which require labeled sensor data in order to be deployed. **A [naval vessel](https://www.sciencedirect.com/topics/engineering/naval-vessels), characterized by a combined diesel-electric and gas propulsion plant, has been exploited to collect such data and show the effectiveness of the proposed approaches.** Because of confidentiality constraints with the Navy the authors used a real-data validated [simulator](https://www.sciencedirect.com/topics/engineering/simulators) and the [dataset](https://www.sciencedirect.com/topics/engineering/dataset) has been published for free use through the UCI repository.
+
+#### Citation Request:
+
+[1] A. Coraddu, L. Oneto, A. Ghio, S. Savio, D. Anguita, M. Figari, Machine Learning Approaches for Improving Condition?Based Maintenance of Naval Propulsion Plants, Journal of Engineering for the Maritime Environment, 2014, DOI: 10.1177/1475090214540874, (In Press) 
+
+@article{Coraddu2013Machine, 
+author={Coraddu, Andrea and Oneto, Luca and Ghio, Alessandro and 
+Savio, Stefano and Anguita, Davide and Figari, Massimo}, 
+title={Machine Learning Approaches for Improving Condition?Based Maintenance of Naval Propulsion Plants}, 
+journal={Journal of Engineering for the Maritime Environment}, 
+volume={--}, 
+number={--}, 
+pages={--}, 
+year={2014} 
+}
+
+## C-MAPSS
+
+## Mechanical    
+### [C-MAPSS](https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/) 
+#### Turbofan Engine Degradation Simulation Data Set    
+
+This data set was generated with the C-MAPSS simulator.  C-MAPSS stands for 'Commercial Modular Aero-Propulsion System Simulation' and it is a tool for the simulation of realistic large commercial turbofan engine data. Each data set is divided into a train and a test set. Each time-series data set is a data set obtained from another engine. A dataset is data from the same type of engine. The four data sets are multivariate time-series data obtained with different operational conditions (ONE, SIX) and fault modes (ONE, TWO), respectively. There are three operational settings that affect engine performance. For each test data, RUL (Remaining Useful Life) values are provided. In the training set, the degradation increases until it reaches the predefined threshold, which is deemed bad for operating the engine. In the test set, the time series data is terminated before it is completely degraded. For each data set, there is a column of 26 sensors.      
+
+Response surfaces of all sensors are generated via a thermo-dynamical simulation model for the engine as a function of variations of flow and efficiency of the modules of interest.  
+
+![](https://img.shields.io/badge/sector-mechanical-purple.svg)
+![](https://img.shields.io/badge/labeled-implicit-green.svg)
+![](https://img.shields.io/badge/time--series-yes-blue.svg)  
+![](https://img.shields.io/badge/time--to--failure-gray.svg) ![](<https://img.shields.io/badge/simulation-yes-blue.svg>)     
+
+#### Data Set Information  
+
+- Data Explanation     
+
+Each engine initially has some wear and there is a manufacturing variation, but this is considered normal.   
+There are three operational settings that affect engine performance.   
+Data was contaminated by sensor noise.    
+At the beginning of each time series data collection, the engine starts at normal state, and a fault occurs at any time point.   
+In the training set, the fault grows until a system failure occurs.     
+In the test set, the time series ends to some extent before a system failure occurs.    
+
+- Purpose of Competition     
+predicting the number of remaining operational cycles before a system failure occurs in the test set.   
+
+
+- Summary of each dataset        
+
+| Data Set | Train trajectories | Test trajectories | Conditions     | Fault modes                           |
+| -------- | ------------------ | ----------------- | -------------- | ------------------------------------- |
+| FD001    | 100                | 100               | One(sea level) | One(HPD Degradation)                  |
+| FD002    | 260                | 259               | Six            | One(HPC degradation)                  |
+| FD003    | 100                | 100               | One            | Two(HPC degradation, fan degradation) |
+| FD004    | 249                | 248               | Six            | Two(HPC degradation, fan degradation) |
+
+| Train Data Set | Number of row | Test Data Set | Number of row | RUL Data Set | Number of row |
+| -------------- | ------------- | ------------- | ------------- | ------------ | ------------- |
+| FD001          | 20631         | FD001         | 13096         | FD001        | 100           |
+| FD002          | 53759         | FD002         | 33991         | FD002        | 259           |
+| FD003          | 24720         | FD003         | 16596         | FD003        | 100           |
+| FD004          | 61249         | FD004         | 41214         | FD004        | 248           |
+
+
+- Attributes Explanation    
+
+Each dataset has 26 columns.     
+The columns correspond to:  
+
+1)	unit number  
+2)	time, in cycles  
+3)	operational setting 1  
+4)	operational setting 2  
+5)	operational setting 3  
+6)	sensor measurement  1  
+7)	sensor measurement  2  
+...  
+26)	sensor measurement  26   
+
+- train/test data set __N/A__   
+  __None__       
+
+#### Paper    
+
+1. [Long Short-Term Memory Network for Remaining
+   Useful Life Estimation](<http://www.hitachi-america.us/rd/about_us/bdl/docs/LSTM_RUL.PDF>)   
+
+   keywords: LSTM,  Multi-Layer Perceptron (MLP), Support Vector Regression (SVR), Relevance Vector Regression (RVR) and Convolutional Neural Network (CNN)   
+
+2. [Remaining Useful Life Estimation Using Functional
+   Data Analysis](<https://arxiv.org/pdf/1904.06442.pdf>)   
+
+   keywords: LSTM, CNN, MLP    
+
+#### Citations  
+
+A. Saxena and K. Goebel (2008). "Turbofan Engine Degradation Simulation Data Set", NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/project/prognostic-data-repository), NASA Ames Research Center, Moffett Field, CA    
+
+##### Data Download Link  
+[https://ti.arc.nasa.gov/c/6/](https://ti.arc.nasa.gov/c/6/)   
+
+Data Capacity(Compressed):  
+
+11.9MB       
+
+## Superconductivity Dataset
+
+# [Superconductivty DataSet](http://archive.ics.uci.edu/ml/datasets/Superconductivty+Data)
+
+8.3MB(compressed)
+
+![](https://img.shields.io/badge/sector-semicon-blue.svg) ![](https://img.shields.io/badge/labeled-yes-blue.svg) ![](https://img.shields.io/badge/time--series-no-red.svg)  ![](<https://img.shields.io/badge/simulation-no-red.svg>)
+
+#### Paper
+
+[A data-driven statistical model for predicting the critical temperature of a superconductor](https://www.sciencedirect.com/science/article/pii/S0927025618304877?via%3Dihub)
+
+#### Data Set Information:
+
+| Data Set Characteristics | Attribute Characteristics | Associated Tasks |
+| ------------------------ | ------------------------- | ---------------- |
+| Multivariate             | Real                      | Regression       |
+
+| Number of Instances | Number of Attributes |
+| ------------------- | -------------------- |
+| 21263               | 81                   |
+
+1. train.csv 
+
+- contains 81 features extracted from 21263 superconductors along with the critical temperature in the 82nd column,
+
+2. unique_m.csv contains the chemical formula broken up for all the 21263 superconductors from the train.csv file. The last two columns have the critical temperature and chemical formula. The original data comes from [[Web Link\]](http://supercon.nims.go.jp/index_en.html) which is public. The goal here is to predict the critical temperature based on the features extracted.
+
+The database contains a large list of superconductors, their critical temperatures, and the source references mostly from journal articles.
+
+#### Variables
+
+The key columns (variables) were “element”, the chemical formula of the material, and
+“Tc”, the critical temperature. Variable “num” was a unique identifier for each row. Column “refno” contained links to the referenced source.
+
+#### Paper
+
+[A data-driven statistical model for predicting the critical temperature of a superconductor](https://www.sciencedirect.com/science/article/pii/S0927025618304877?via%3Dihub)
+
+#### Citation Request:
+
+Hamidieh, Kam, A data-driven statistical model for predicting the critical temperature of a superconductor, Computational Materials Science, Volume 154, November 2018, Pages 346-354, [[Web Link\]](https://doi.org/10.1016/j.commatsci.2018.07.052)
+
+## GREEND
+
+## [GreenD: Energy metering data set](https://sourceforge.net/projects/greend/)
+
+1.8GB (compressed)
+
+GREEND is an energy dataset containing power measurements collected from multiple households in Austria and Italy. It provides detailed energy profiles on a per device basis with a sampling rate of 1 Hz.
+
+![](https://img.shields.io/badge/sector-power-skyblue.svg) ![](https://img.shields.io/badge/labeled-implicit-green.svg) ![](https://img.shields.io/badge/simulation-no-red.svg) 
+
+#### Data Set Information:
+
+GREEND is the first 1Hz consumption dataset for Austria and Italy. The type and number of devices, as well as the number of monitored households significantly constraints the final application of the dataset. A statistical analysis of consumption behavior of residents would require a high number of households.
+
+The measurement campaign was an ambitious aspect of the MONERGY project in which we monitored active power (Watts) at 1 Hz in selected households in the region of Carinthia (Austria) and Friuli-Venezia Giulia (Italy) for long term (1 year). We have been monitoring 8 households: 4 across the province of Udine (Italy) and 4 in the area of Klagenfurt (Austria).
+
+The dataset was analyzed to model the energy demand in the regions and released to the research community for further studies. Each household(building0~7) is a different folder containing daily CSV files. Each file has the format timestamp, power for MAC1, power for MAC2, and so on, with MAC indicating in the header the network address of the Zigbee node used to collect the measurements.
+
+In particular, the dataset was used for the following research areas:
+
+1. Load disaggregation: identifying individual devices given an overall power measurement
+2. Device usage modelling: predicting device operation in order to model users' preferences and plan control strategies
+3. Occupancy modeling: given device usage inferring room and building occupancy, for instance to control thermostats
+4. Autonomous device operation: learning controllers for small energy consumers/producers given power profiles and usage models extracted from real devices
+
+#### Paper
+
+[GREEND: An energy consumption dataset of households in Italy and Austria](https://www.researchgate.net/publication/262302322_GREEND_An_energy_consumption_dataset_of_households_in_Italy_and_Austria)
+
+**Abstract**
+
+Home energy management systems can be used to monitor and optimize consumption and local production from renewable energy. To assess solutions before their deployment, researchers and designers of those systems demand for energy consumption datasets. In this paper, we present the GREEND dataset, containing detailed power usage information obtained through a measurement campaign in households in Austria and Italy. We provide a description of consumption scenarios and discuss design choices for the sensing infrastructure. Finally, we benchmark the dataset with state-of-the-art techniques in load disaggregation, occupancy detection and appliance usage mining.
+
+#### Citation Request
+
+A. Monacchi, D. Egarter, W. Elmenreich, S. D’Alessandro, A. M. Tonello. GREEND: An Energy Consumption Dataset of Households in Italy and Austria. In proceedings of the 5th IEEE International Conference on Smart Grid Communications (SmartGridComm 14). November 2014, Venice, Italy.
+
+**reference**
+
+[kaggle dataset description](https://www.kaggle.com/p111110/greend-energy-dataset#dataset_2014-05-15.csv)
+
+## IDA2016 Challenge Challenge on this dataset
+
+
+
+## Gas Sensor Array Drift
+
+## Chemical
+### [Gas Sensor Array Drift](https://archive.ics.uci.edu/ml/datasets/Gas+Sensor+Array+Drift+Dataset+at+Different+Concentrations)  
+
+This archive contains 13910 measurements from 16 chemical sensors exposed to 6 different gases at various concentration levels. These measurements are utilized in simulations for drift compensation in a __discrimination task of six gases at various levels of concentrations.__  
+The dataset was gathered during the period of January 2008 to February 2011 (36 months).  
+This data is divided into 10 batch files with a '.dat' extension.  
+
+The dataset was gathered during the period of January 2008 to February 2011 (36 months) in a gas delivery platform facility situated at the ChemoSignals Laboratory in the BioCircuits Institute, University of California San Diego.    
+
+![](https://img.shields.io/badge/sector-chemical-red.svg)
+![](https://img.shields.io/badge/labeled-yes-blue.svg)
+![](https://img.shields.io/badge/time--series-yes-blue.svg)  ![](<https://img.shields.io/badge/simulation-yes-blue.svg>)       
+
+#### Data Set Information    
+
+
+- Data Summary      
+
+| Data Set Characteristics  | Attribute Characteristics | Associated Tasks                              |
+| ------------------------- | ------------------------- | --------------------------------------------- |
+| Multivariate, Time-Series | Real                      | Classification, Regression, Clustering, Causa |
+
+| Number of Instances | Number of Attributes | Number of Missing Values(N/A) | Number of Classes |
+| ------------------- | -------------------- | ----------------------------- | ----------------- |
+| 13910               | 129                  | 0                             | 6                 |
+
+> The first nomial variable is a class (target) variable. Remaining 128 variables are all numeric types.   
+> There is no distinction between training data and test data in the data file.    
+
+- Gas name of 6 classes and interval of concentration levels of each gas
+
+| Name of gas | Ammonia   | Acetaldehyde | Acetone   | Ethylene | Ethanol  | Toluene  |
+| ----------- | --------- | ------------ | --------- | -------- | -------- | -------- |
+| ppmv        | (50,1000) | (5,500)      | (12,1000) | (10,300) | (10,600) | (10,100) |
+
+
+- \# of each class    
+
+| 1    | 2    | 3    | 4    | 5    | 6    |
+| ---- | ---- | ---- | ---- | ---- | ---- |
+| 2565 | 2926 | 1641 | 1936 | 3009 | 1833 |
+
+- Attributes       
+
+  Why 128-element feature vector per measurement? MOX gas sensors typically describe a monotonically smooth change in the conductance of the sensing layer due to the adsorption/desorption reaction processes of the exposed chemical analyte substance. We represented each time series with an aggregate of __eight features__ reflecting the sensor response. In particular, we considered two distinct types of features in the creation of this dataset: __two steady-state features__ and __six features__ reflecting the sensor dynamics. The steady-state features include the amplitude of the resistance change, and its normalized value. The transient features were extracted based on the exponential moving average (EMA) to reflect the sensor dynamics of the increasing/decaying transient portion of the sensor responses. The EMA transform evaluates the rising/decaying portions of the sensor resistance by considering the maximum/minimum values of y[k] of the following first-order digital filter:  y[k] = (1-a)y[k-1] + a(x[k] - x[k-1])     
+
+  where 0 < α < 1 is the smoothing parameter of the filter and x[k] is the acquired value at time k. Since different values of α provide different feature values and different information of the transient response, we computed the EMA filter for three values of α = 0.1, 0.01, 0.001 for both the rising and the decaying stages. Therefore, each of the __16 sensors__ used in the study contributes with __8 features__, thereby yielding a __128-element feature vector__ per measurement.     
+
+   
+
+#### Paper    
+
+1. [Chemical gas sensor drift compensation using classifier ensembles](<https://www.researchgate.net/publication/216301619_Gas_sensor_drift_mitigation_using_classifier_ensembles>)     
+
+   keywords: sensor drift, chemical sensing, time series classification, ensemble methods, support vector machines     
+
+2. [Effective Clustering Algorithm for Gas Sensor Array
+   Drift Dataset](<http://www.periyaruniversity.ac.in/ijcii/issue/Vol3No3December2013/IJCII%203-3-111.pdf>)    
+
+   keywords: K-Means, Fuzzy C-Means(FCM) and Rough K-Means algorithm     
+
+3. [Learning Domain-Invariant Subspace using Domain Features and Independence Maximization](<https://arxiv.org/pdf/1603.04535.pdf>)    
+
+4. [Correcting Instrumental Variation and Time-varying Drift: A Transfer Learning Approach with Autoencoders](<http://yanke23.com/papers/preprint_DCAE.pdf>)      
+
+#### Citation  
+
+ A Vergara, S Vembu, T Ayhan, M Ryan, M Homer, R Huerta. "Chemical gas sensor drift compensation using classifier ensembles." Sensors and Actuators B: Chemical 166 (2012): 320-329.     
+
+I Rodriguez-Lujan, J Fonollosa, A Vergara, M Homer, R Huerta. "On the calibration of sensor arrays for pattern recognition using the minimal number of experiments." Chemometrics and Intelligent Laboratory Systems 130 (2014): 123-134.    
+
+##### Data Download Link   
+[https://archive.ics.uci.edu/ml/machine-learning-databases/00270/](https://archive.ics.uci.edu/ml/machine-learning-databases/00270/)    
+[gas_sensor_array_drift](https://github.com/LSHReader/data-explanation/tree/master/Gas%20Sensor%20Array%20Drift/gas_sensor_array_drift/gas_sensor_array_drift)     
+
+Data Capacity(Compressed)             
+
+9.6MB        
+
+## PHM Data Challenge 18
+
+## Semicon
+### [PHM DATA Challenge 18](https://www.phmsociety.org/events/conference/phm/18/data-challenge): Etching tool fault detection (PdM)  
+
+The data provided by PHM Data Challenge 18 was provided to investigate the fault behavior of ion mill etch tools in the wafer manufacturing process. It is a database that collects sensor data in time sequence from ion mill etching tools operating under various setting conditions.    
+
+![](https://img.shields.io/badge/sector-semicon-blue.svg)
+![](https://img.shields.io/badge/labeled-yes-blue.svg)
+![](https://img.shields.io/badge/time--series-yes-blue.svg) ![](<https://img.shields.io/badge/simulation-no-red.svg>)        
+
+#### Data Set Information    
+
+__Training data__   
+
+The training data consists of 60 csv files. It consists of 20 train files, which are training data, 20 train_fault files containing abnormal information only at abnormal points, and 20 train_ttf files, which show ttf information.   
+
+- Data Summary   
+
+| \# of abnormal data | \# of normal data | \# of total data |
+| ------------------- | ----------------- | ---------------- |
+| 1,236               | 82,188,204        | 82,189,440       |
+
+- 20 'train' files consist of 82,189,440 rows and consist of 24 columns. The information of 24 columns is as follows.       
+
+| ID#  | Parameter Name          | Type            | Description                                                  |
+| ---- | ----------------------- | --------------- | ------------------------------------------------------------ |
+| S1   | time                    | Numeric         | time                                                         |
+| S2   | Tool                    | Categorical     | tool id                                                      |
+| S3   | stage                   | Categorical     | processing stage of wafer                                    |
+| S4   | Lot                     | Categorical     | wafer id                                                     |
+| S5   | runnum                  | Numeric         | number of times tool has been run                            |
+| S6   | recipe                  | Categorical     | describes tool settings used to process wafer                |
+| S7   | recipe_step             | Categorical     | process step of a recipe                                     |
+| S8   | IONGAUGEPRESSURE        | Numeric(Sensor) | pressure reading for the main process chamber when under vacuum |
+| S9   | ETCHBEAMVOLTAGE         | Numeric         | voltage potential applied to the beam plate of the grid assembly |
+| S10  | ETCHBEAMCURRENT         | Numeric         | ion current impacting the beam grid determining the amount of ions accelerated through the grid assembly to the wafer |
+| S11  | ETCHSUPPRESSORVOLTAGE   | Numeric         | voltage potential applied to the suppressor plate of the grid assembly |
+| S12  | ETCHSUPPRESSORCURRENT   | Numeric(Sensor) | ion current impacting the suppressor grid plate              |
+| S13  | FLOWCOOLFLOWRATE        | Numeric         | rate of flow of helium through the flowcool circuit, controlled by mass flow controller |
+| S14  | FLOWCOOLPRESSURE        | Numeric(Sensor) | resulting helium pressure in the flowcool circuit            |
+| S15  | ETCHGASCHANNEL1READBACK | Numeric         | rate of flow of argon into the source assembly in the vacuum chamber |
+| S16  | ETCHPBNGASREADBACK      | Numeric         | rate of flow of argon into the PBN assembly in the chamber   |
+| S17  | FIXTURETILTANGLE        | Numeric         | wafer tilt angle setting                                     |
+| S18  | ROTATIONSPEED           | Numeric         | wafer rotation speed setting                                 |
+| S19  | ACTUALROTATIONANGLE     | Numeric(Sensor) | measure wafer rotation angle                                 |
+| S20  | FIXTURESHUTTERPOSITION  | Numeric         | open / close shutter setting for wafer shielding             |
+| S21  | ETCHSOURCEUSAGE         | Numeric         | counter of use for the grid assembly consumable              |
+| S22  | ETCHAUXSOURCETIMER      | Numeric         | counter of the use for the chamber shields consumable        |
+| S23  | ETCHAUX2SOURCETIMER     | Numeric         | counter of the use for the chamber shields consumable        |
+| S24  | ACTUALSTEPDURATION      | Numeric(Sensor) | measured time duration for a particular step                 |
+
+- 20 'train_fault' files consist of a total of 1,236 rows and consist of three columns.    
+
+| ID#  | Parameter Name | Type        | Description                                                  |
+| ---- | -------------- | ----------- | ------------------------------------------------------------ |
+| F1   | time           | Numeric     | time                                                         |
+| F2   | fault_name     | Categorical | name of the particular class of fault that occurred at the specified time |
+| F3   | stage          | Categorical | -                                                            |
+
+- 20 'train_ttf' files consist of a total of  82,189,440 rows and consist of four columns.      
+
+| Parameter Name                                     | Type    |
+| -------------------------------------------------- | ------- |
+| time                                               | Numeric |
+| TTF_FlowCool Pressure Dropped Below Limit          | Numeric |
+| TTF_Flowcool Pressure Too High Check Flowcool Pump | Numeric |
+| TTF_Flowcool leak                                  | Numeric |
+
+__Test data__    
+
+- The test data consists of 5 csv files. It consists of 7,198,948 rows and consists of 24 columns.      
+
+####  Purpose of Data Challenge        
+
+The purpose of this PHM data challenge is as follows.   
+
+1. Diagnose failure(i.e detect and identify)  
+2. Determine time remaining until next failure (i.e predict remaining useful life)  
+
+#### Paper   
+
+These are not the papers provided by PHM data Challenge 2018 , attached are some of the papers listed in this paper session of [2018 PHM Society Conference brochure (2018-09-22).pdf](<https://www.phmsociety.org/sites/phmsociety.org/files/2018%20PHM%20Society%20Conference%20brochure%20(2018-09-22).pdf>)     
+
+1. [A Data Driven Health Monitoring Approach to Extending Small
+   Sats Mission](https://www.phmpapers.org/index.php/phmconf/article/download/573/phmc_18_573) - Prognostics     
+
+   keywords: anomaly detection, LSTM, Auto-Encoder, sensor   
+
+2. [Automated Hyper-parameter Tuning for Machine Learning Models
+   in Machine Health Prognostics](https://www.phmpapers.org/index.php/phmconf/article/download/490/phmc_18_490) - Diagnostics    
+
+   keywords: data from PHM 2016 Data Challenge, Bayesian optimization algorithms, hyper-parameter optimization problem    
+
+##### Data Download Link     
+[https://drive.google.com/open?id=15Jx9Scq9FqpIGn8jbAQB_lcHSXvIoPzb](https://drive.google.com/open?id=15Jx9Scq9FqpIGn8jbAQB_lcHSXvIoPzb)    
+
+Data Capacity(Compressed) : 5.0G    
+
+
+
+## Steel Plates Faults
+
+## [Steel Plates Faults Data Set](http://archive.ics.uci.edu/ml/datasets/Steel+Plates+Faults)
+
+Faults.NNA : 292KB
+
+Faults27x7 var : 497Byte
+
+ ![](https://img.shields.io/badge/sector-steal-gray.svg) ![](https://img.shields.io/badge/labeled-yes-blue.svg)  ![](<https://img.shields.io/badge/simulation-no-red.svg>) ![](https://img.shields.io/badge/time--series-no-red.svg)  ![](https://img.shields.io/badge/fault_classification-gray.svg)
+
+#### Data Set Information
+
+| Data Set Characteristics | Attribute Characteristics | Associated Tasks |
+| ------------------------ | ------------------------- | ---------------- |
+| Multivariate             | Real                      | Classification   |
+
+| Number of Instances | Number of Attributes |      |      |
+| ------------------- | -------------------- | ---- | ---- |
+| 1941                | 27                   |      |      |
+
+A dataset of steel plates’ faults, classified into 7 different types. The goal was to train machine learning for automatic pattern recognition.
+
+Dataset has 7 binary features that describe the 27 features describing fault(location, size,...) and type of fault(one of 7: Pastry, Z_Scratch, K_Scatch, Stains, Dirtiness, Bumps, Other_Faults). The type part of t he fault is also used as a binary classification target('common' or 'other' fault).
+
+The last 7 columns are one hot encoded classes, i.e. if the plate fault is classified as "Stains" there will be a 1 in that column and 0's in the other columns. If you are unfamiliar with one hot encoding, just know that the last seven columns are your class labels.
+
+All dataset records indicate a superficial fault of stainless steel leaf. There are six types of faults: The fault description consists of 27 indicators that indicate the geometry of the fault and its outline.
+
+#### Variables
+
+27 Independent variables
+
+X_Minimum  
+X_Maximum  
+Y_Minimum   
+Y_Maximum  
+Pixels_Areas  
+X_Perimeter  
+Y_Perimeter  
+Sum_of_Luminosity  
+Minimum_of_Luminosity  
+Maximum_of_Luminosity  
+Length_of_Conveyer  
+TypeOfSteel_A300  
+TypeOfSteel_A400  
+Steel_Plate_Thickness  
+Edges_Index  
+Empty_Index  
+Square_Index  
+Outside_X_Index  
+Edges_X_Index  
+Edges_Y_Index  
+Outside_Global_Index  
+LogOfAreas  
+Log_X_Index  
+Log_Y_Index   
+Orientation_Index  
+Luminosity_Index  
+SigmoidOfAreas   
+
+Type of dependent variables(7 Types of Steel Plates Faults) - one hot encoding
+
+**the last seven columns are class labels.**
+
+Pastry  
+Z_Scratch  
+K_Scatch  
+Stains  
+Dirtiness  
+Bumps  
+Other_Faults  
+
+#### paper
+
+[MetaNet*: The Theory of Independent Judges](https://www.researchgate.net/publication/13731626_MetaNet_The_Theory_of_Independent_Judges)
+
+**Classification of Six Types of Surface Defects in Stainless Steel Plates**
+
+The goal is to accurately classify the types of surface defects in stainless steel plates with six possible types of defects
+
+#### Citation Request:
+
+dataset provided by Semeion, Research Center of Sciences of Communication, Via Sersale 117, 00128, Rome, Italy. www.semeion.it
+
+## REDD
+
+## Power  
+### [REDD: A Public Data Set for Energy Disaggregation Research](<http://redd.csail.mit.edu/>)      
+
+The data contains power consumption from real homes, for the whole house as well as for each individual circuit in the house (labeled by the main type of appliance on that circuit). The data is intended for use in developing disaggregation methods, which can predict, from only the whole-home signal, which devices are being used (though any other uses are of course encouraged as well).    
+
+![](https://img.shields.io/badge/sector-power-lightblue.svg) ![](https://img.shields.io/badge/labeled-yes-blue.svg)![](https://img.shields.io/badge/time--series-yes-blue.svg)     
+
+#### Data Set Information      
+
+- Law Frequency Power Data  
+
+  ```
+  The low_freq/ directory contains average power readings for both the
+  two power mains and the individual circuits of the house (eventually,
+  this will also contain plug loads for houses with individual plug
+  monitors).  The data is logged at a frequency of about once a second
+  for a mains and once every three seconds for the circuits.  The
+  directory is organized as follows:
+  
+  redd/low_freq/
+    house_{1..n}/          -- directories for each house
+      labels.dat           -- device category labels for every channel
+      channel_{1..k}.dat   -- time/wattage readings for each channel
+  
+  The main directory consists of several house_i directories, each of
+  which contain all the power readings for a single house.  Each house
+  subdirectory consists of a labels.dat and several channels_i.dat
+  files.  The labels file contains channel numbers and a text label
+  indicating the general category of device on this channel, for
+  example:
+  
+  1 mains_1
+  2 mains_2
+  3 refrigerator
+  4 lighting
+  ...
+  
+  In cases where the circuit has different device types on it (for
+  example, circuits that power multiple outlets), we have attempted to
+  best categorize the main type of appliance on the circuit.
+  
+  Each channel_i.dat file contains UTC timestamps (as integers) and
+  power readings (recording the apparent power of the circuit) for
+  the channel:
+  
+  ...
+  1306541834      102.964
+  1306541835      103.125
+  1306541836      104.001
+  1306541837      102.994
+  1306541838      102.361
+  1306541839      102.589
+  ...
+  ```
+
+- High Frequency Waveform Data    
+
+  ```
+  The high_freq/ directory contains AC waveform data for the power mains
+  and a single phase of the voltage for the home.  In order to reduce
+  the data to a manageable size, we have compressed these waveforms using
+  lossy compression.  Briefly, the procedure is as follows:
+  
+  Because the voltage signal in most homes is approximately sinusoidal
+  (unlike the current signals, which can vary substantially from a
+  sinusoidal wave), we find zero-crossings of the voltage signal to
+  isolate a single cycle of the AC power.  For the time spanned by this
+  single cycle, we record both the current and voltage signals, and
+  report this entire waveform.  However, because the waveforms remain
+  approximately constant for long periods of time, we only report the
+  current and voltage waveforms at "change points" in the signal (we
+  identify change points using a method known as total variation
+  regularization, but a full description of the approach is outside the
+  scope of this readme).
+  
+  As before, the high_freq/ directory contains a subdirectory for each
+  house, each of which contain current_1.dat, current_2.dat, and
+  voltage.dat files.
+  
+  redd/low_freq/
+    house_{1..n}/          -- directories for each house
+      current_1.dat        -- current waveforms for first power mains
+      current_2.dat        -- current waveforms for second power mains
+      voltage.dat          -- voltage waveforms
+  
+  The data files are text files, where each line contains:
+  
+  1) A decimal UTC timestamp, in the same format as the timestamps for
+  the low frequency data, but allowing for fractional parts
+  2) A cycle count.  Although this is represented in the file as a
+  double, it is in fact an integer that indicates for how many AC cycles
+  this particular waveform remains.
+  3) 275 decimal values, indicating the value of the waveform (in amps or
+  volts), at equally-spaced portions of the cycle.
+  
+  Thus, an example file might be:
+  
+  1297340206.597013 135.000000 0.000000 3.623859 7.254136 10.949398 ...
+  1297340208.844086 722.000000 0.000000 3.638527 7.249567 10.929027 ...
+  ....
+  
+  Indicating that the waveform in the first line occurred first at
+  timestamp 1297340206.597013 and lasted for 135 cycles.
+  ```
+
+- High Frequency Raw Data   
+
+  ```
+  Finally, the high_freq_raw/ directory contains raw current and voltage
+  waveforms (unaligned and without compression), for a small number of
+  sample points throughout the data.  This is main intended for those
+  who wish to test different compression/filtering methods beyond what
+  we do in the high_freq/ data.  Although for practicality we are not
+  planning to broadly distribute raw data for the entire data set (this
+  would consist of more than a terabyte of data), if other groups are
+  able to develop substantially better compression/filtering techniques
+  then we'd be happy to share the full data or run these proposed
+  algorithms on the full uncompressed data set.
+  
+  The high_freq_raw/ directory is organized similar to the high_freq/
+  directory, except that each current_1, current_2, and voltage files
+  are instead themselves directories that contain raw binary data:
+  
+  high_freq_raw/
+    house_{1..n}/          -- directories for each house
+      current_1/           -- current waveforms for first power mains
+        <timestamp>.bz2    -- compressed binary data
+        ...
+      current_2/           -- current waveforms for second power mains
+      voltage/             -- voltage waveforms
+  
+  The current_1/, current_2/, and voltage/ directories contain a number
+  of <timestamp>.bz2 files, for example 1303091049.bz2.  These are
+  compressed binary files containing the raw current/voltage waveforms
+  from the A/D as a sequence of 32-bit floating point numbers (stored in
+  little-endian format).  Interspersed through the data are several
+  'time' ASCII codes (hex: 0x74 0x69 0x6d 0x65).  This indicates that an
+  8 byte time code is to follow, indicating the the time at the
+  beginning of the sample.  The time is stored as two binary integers
+  (again in little endian format): the first indicating the UTC
+  timestamp in seconds, and the second indicating the fractional portion
+  of the timestamp in nano-seconds.  The timestamps are taking using the
+  Windows clock on the collecting machines, so are likely only accurate
+  to the millisecond level or so.
+  ```
+
+#### Paper    
+
+1. [REDD: A Public Data Set for Energy Disaggregation Research](<http://redd.csail.mit.edu/kolter-kddsust11.pdf>)         
+
+#### Citation  
+
+J. Zico Kolter and Matthew J. Johnson. REDD: A public data set for energy disaggregation research. In proceedings of the SustKDD workshop on Data Mining Applications in Sustainability, 2011.    
+
+##### Data Download Link   
+<http://redd.csail.mit.edu/>     
+
+Data Capacity(Compressed)              
+
+readme.txt    
+
+low_freq.tar.bz2    
+
+high_freq.tar.bz2   
+
+high_freq_raw.tar    
+
+​        
+
+## Dynamic Gas Mixtures
+
+## Chemical    
+### [Dynamic Gas Mixtures](https://archive.ics.uci.edu/ml/datasets/Gas+sensor+array+under+dynamic+gas+mixtures) 
+
+This data set contains the acquired time series from 16 chemical sensors exposed to gas mixtures at varying concentration levels.      
+For each measurement (each gas mixture), the signals were acquired continuously for about 12 hours without interruption.   
+
+The data set was collected in a gas delivery platform facility at the ChemoSignals Laboratory in the BioCircuits Institute, University of California San Diego.   
+
+![](https://img.shields.io/badge/sector-chemical-red.svg)
+![](https://img.shields.io/badge/labeled-yes-blue.svg)
+![](https://img.shields.io/badge/time--series-yes-blue.svg) ![](<https://img.shields.io/badge/simulation-yes-blue.svg>)    
+
+#### Data Set Information  
+
+- Data Summary      
+
+| Data Set Characteristics  | Attribute Characteristics | Associated Tasks           |
+| ------------------------- | ------------------------- | -------------------------- |
+| Multivariate, Time-Series | Real                      | Classification, Regression |
+
+| Number of Instances | Number of Attributes | Number of Missing Values(NaN/not available) |
+| ------------------- | -------------------- | ------------------------------------------- |
+| 4178504             | 19                   | 0                                           |
+
+
+- Data Explanation     
+The data consists of two files, each containing data for each gas mixture.    
+Two kinds of gas mixtures = Ethylene and Methane in air / Ethylene and CO in air  
+Each file consists of 19 columns = Time(seconds), Methane conc(or CO conc) (ppm), Ethylene conc (ppm), sensor readings (16 channels)  
+Sequence of Sensors = TGS2602; TGS2602; TGS2600; TGS2600; TGS2610; TGS2610; TGS2620; TGS2620; TGS2602; TGS2602; TGS2600; TGS2600; TGS2610; TGS2610; TGS2620; TGS2620        
+
+#### Paper  
+
+1. [kaggle](<https://www.kaggle.com/uciml/gas-sensor-array-under-dynamic-gas-mixtures>)   
+
+2. [A wireless sensor data-based coal mine gas monitoring algorithm with least squares support vector machines optimized by swarm intelligence techniques](<https://journals.sagepub.com/doi/full/10.1177/1550147718777440>): There is a part of experiment with gas sensor array drift data.     
+
+   keywords: CNN, LSTM, LS-SVM    
+
+#### Citation   
+
+Citation of Fonollosa et al. 'Reservoir Computing compensates slow response of chemosensor arrays exposed to fast varying gas concentrations in continuous monitoring'; Sensors and Actuators B, 2015 is required.     
+
+
+##### Data Download Link   
+[https://archive.ics.uci.edu/ml/machine-learning-databases/00322/](https://archive.ics.uci.edu/ml/machine-learning-databases/00322/)   
+
+Data Capacity(Compressed):   
+
+352MB      
+
+## APS System Failures
+
+## [APS Failure at Scania Trucks Data Set](https://archive.ics.uci.edu/ml/datasets/APS+Failure+at+Scania+Trucks)
+
+aps_failure_test_set.csv : 11.9MB (16,000)
+
+aps_failure_training_set.csv : 44.7MB (60,000)
+
+The datasets' positive class consists of component failures for a specific component of the APS system. The negative class consists of trucks with failures for components not related to the APS.
+
+![](https://img.shields.io/badge/sector-etc-black.svg) ![](https://img.shields.io/badge/labeled-yes-blue.svg) ![](https://img.shields.io/badge/time--series-no-red.svg) ![](https://img.shields.io/badge/failure%20classification-gray.svg) ![](<https://img.shields.io/badge/simulation-no-red.svg>)
+
+#### Data Set Information:
+
+| Data Set Characteristics | Attribute Characteristics | Associated Tasks |
+| ------------------------ | ------------------------- | ---------------- |
+| Multivariate             | Integer, Real             | Classification   |
+
+| Number of Instances | Number of Attributes |      |      |
+| ------------------- | -------------------- | ---- | ---- |
+| 60000               | 171                  |      |      |
+
+**Introduction**
+The dataset consists of data collected from heavy Scania trucks in everyday usage.
+
+The system in focus is the Air Pressure system (APS) which generates pressurised air that are utilized in various functions in a truck, such as braking and gear changes.
+
+- The positive class consists of component failures for a specific component of the APS system.
+- The negative class consists of trucks with failures for components not related to the APS.
+
+The data consists of a subset of all available data, selected by experts. (in order to guarantee the quality of the predictive model)
+
+**Challenge metric**
+
+Cost-metric of miss-classification: 
+
+Predicted class | True class | 
+
+| pos | neg | 
+
+pos | - | Cost_1 | 
+
+neg | Cost_2 | - | 
+
+Cost_1(FP) = 10 and cost_2(FN) = 500 
+
+The total cost of a prediction model the sum of 'Cost_1' multiplied by the number of Instances with type 1 failure(FP) and 'Cost_2' with the number of instances with type 2 failure(FN), resulting in a 'Total_cost'.
+
+In this case Cost_1 refers to the cost that an unnecessary check needs to be done by an mechanic at an workshop, while Cost_2 refer to the cost of missing a faulty truck, which may cause a breakdown. 
+
+Total_cost = Cost_1 * Num_Instances + Cost_2 * Num_Instances. 
+
+**Number of Instances:**
+
+The training set contains 60000 examples in total in which 59000 belong to the negative class and 1000 positive class. The test set contains 16000 examples.
+
+**Attribute Information: **
+
+The attribute names of the data have been **anonymized** for proprietary reasons. It consists of both single numerical counters and histograms consisting of bins with different conditions. Typically the histograms have open-ended conditions at each end. For example if we measuring the ambient temperature 'T' then the histogram could be defined with 4 bins where: 
+
+bin 1 collect values for temperature T < -20 
+bin 2 collect values for temperature T >= -20 and T < 0 
+bin 3 collect values for temperature T >= 0 and T < 20 
+bin 4 collect values for temperature T > 20 
+
+| b1 | b2 | b3 | b4 | 
+
+-20 0 20 
+
+The attributes are as follows: class, then anonymized operational data. The operational data have an identifier and a bin id, like 'Identifier_Bin'. 
+In total there are 171 attributes, of which **7 are histogram variables.** Missing values are denoted by 'na'.
+
+#### Paper
+
+[Prediction of Failures in the Air Pressure System of Scania Trucks using a Random Forest and Feature Engineering](https://www.researchgate.net/publication/309195602_Prediction_of_Failures_in_the_Air_Pressure_System_of_Scania_Trucks_Using_a_Random_Forest_and_Feature_Engineering)
+
+This paper demonstrates an approach in data analysis to minimize overall maintenance costs for the air pressure system of Scania trucks. Feature creation on histograms was used. Randomly chosen subsets of attributes were then evaluated to generate an order and a final subset of features. Finally, a Random Forest was applied and finetuned. The results clearly show that data analysis in the field is beneficial and improves upon the naive approaches of checking every truck or no truck until failure.
+
+**Data Understanding**
+
+The data given to us contains a training set and a test set. The training set contains 60,000 rows, of which 1,000 belong to the positive class and 171 columns, of which one is the class column.
+
+All attributes are numeric. **70 of these attributes belong to 7 histograms with ten bins each.** Based on visual inspection we guessed, that the sum across each histogram indicates the age of the APS.
+
+Also, most failures could be predicted by using one or two features. It appeared that the hard part is to correctly predict failures for records that are actually very close to the non-failure class. Some visual inspection methods we used were:
+– Box plots to get an overview of the variance of the values.
+– Scatter plots to see how the classes are spread.
+– Radar charts to recognize outliers.
+
+[Combining Boosted Trees with Metafeature Engineering for Predictive Maintenance](https://www.researchgate.net/publication/313067390_Combining_Boosted_Trees_with_Metafeature_Engineering_for_Predictive_Maintenance)
+
+The exploratory analysis of the data enabled to outlined two important conditions:
+
+(1) high quantity of missing values
+
+(2) high imbalance in the class distribution
+
+#### Citation Request:
+
+Please refer to the Machine Learning Repository's [citation policy](https://archive.ics.uci.edu/ml/citation_policy.html) 
+
+## ECO dataset
+
+## [ECO dataset](http://vs.inf.ethz.ch/res/show.html?what=eco-data)
+
+![](https://img.shields.io/badge/sector-power-skyblue.svg) ![](https://img.shields.io/badge/labeled-yes-blue.svg) ![](https://img.shields.io/badge/simulation-no-red.svg)
+
+The ECO (Electricity Consumption and Occupancy) data set is a comprehensive open-source (Creative Commons License CC BY 4.0) data set for non-intrusive load monitoring and occupancy detection research. It was collected in 6 Swiss households over a period of 8 months. For each of the households, the ECO data set provides:
+
+- 1 Hz aggregate consumption data. Each measurement contains data on current, voltage, and phase shift for each of the three phases in the household.
+- 1 Hz plug-level data measured from selected appliances.
+- Occupancy information measured through a tablet computer (manual labeling) and a passive infrared sensor (in some of the households).
+
+The files are coded in the following way. The first two digits (e.g., 01-06 identify the household). The next part {sm, plugs, occupancy} identifies the type of data (i.e., readings from the smart meter, the plugs and the occupancy ground truth). Lastly, where applicable, the suffix indicates the format of the data (either Matlab or plain CSV)
+
+For each of the six households we collected aggregate electricity consumption data at 1 Hz using off-the-shelf smart meters. In total we collected more than 100 million measurements during the period of the deployment.
+
+#### Variables
+
+Household 1 : (1) Fridge, (2) dryer, (3) coffee machine, (4) kettle, (5) washing machine, (6) PC, (7) freezer.   
+Household 2 : (1) Tablet, (2) dishwasher, (3) stove, (4) fridge, (5) TV, (6) stereo, (7) freezer, (8) kettle, (9) lamp, (10) laptops.  
+Household 3 : (1) Tablet, (2) freezer, (3) coffee machine, (4) PC, (5) fridge, (6) kettle, (7) entertainment.  
+Household 4 : (1) Fridge, (2) kitchen appliances3 , (3) lamp, (4) stereo & laptop, (5) freezer, (6) tablet, (7) entertainment, (8) microwave.  
+Household 5 : (1) Tablet, (2) coffee machine, (3) kettle, (4) microwave, (5) fridge, (6) entertainment, (7) PC, router & printer, (8) fountain.  
+Household 6 : (1) Lamp, (2) laptop & printer, (3) routers, (4) coffee machine, (5) en     
+
+#### Paper
+
+[The ECO Data Set and the Performance of Non-Intrusive Load Monitoring Algorithms](https://www.vs.inf.ethz.ch/publ/papers/beckel-2014-nilm.pdf)
+
+
+## Data-driven prediction of battery cycle life before capacity degradation
+
+# [Data-driven prediction of battery cycle life before capacity degradation](https://data.matr.io/1/)
+
+2.82GB , 1.8GB, 3.01GB
+
+This dataset, used in “Data-driven prediction of battery cycle life before capacity degradation”, consists of 124 commercial lithium-ion batteries cycled to failure under fast-charging conditions. These lithium-ion phosphate (LFP)/graphite cells, manufactured by A123 Systems (APR18650M1A), were cycled in horizontal cylindrical fixtures on a 48-channel Arbin LBT potentiostat in a forced convection temperature chamber set to 30°C. The cells have a nominal capacity of 1.1 Ah and a nominal voltage of 3.3 V.
+
+**objective**
+
+The objective of this work is to optimize fast charging for lithium-ion batteries. As such, all cells in this dataset are charged with a one-step or two-step fast-charging policy. 
+
+ ![](https://img.shields.io/badge/sector-battery-ff69b4.svg)  ![](https://img.shields.io/badge/labeled-no-red.svg)  ![](https://img.shields.io/badge/time--series-yes-blue.svg)  ![](<https://img.shields.io/badge/simulation-no-red.svg>)
+
+#### Data Set Information
+
+| Data Set Characteristics | Attribute Characteristics | Associated Tasks |
+| ------------------------ | ------------------------- | ---------------- |
+| Multivariate             | Real                      | Regression       |
+
+**How to make data set**
+
+"C1(A1)-C2"
+
+- C1,C2 : first and second constant-current steps, respectively
+- Q1 : the state-of-charge (SOC, %) at which the currents switch
+
+The second current step ends at 80% SOC, after which the cells charge at 1C CC-CV. The upper and lower cutoff potentials are 3.6 V and 2.0 V, respectively, which are consistent with the manufacturer’s specifications. These cutoff potentials are fixed for all current steps, including fast charging; after some cycling, the cells may hit the upper cutoff potential during fast charging, leading to significant constant-voltage charging. All cells discharge at 4C.
+
+The dataset is divided into three “batches”, representing approximately 48 cells each. Each batch is defined by a “batch date”, or the date the tests were started. Each batch has a few irregularities, as detailed on the page for each batch.
+
+The temperature measurements are performed by attaching a Type T thermocouple with thermal epoxy (OMEGATHERM 201) and Kapton tape to the exposed cell can after stripping a small section of the plastic insulation. Note that the temperature measurements are not perfectly reliable; the thermal contact between the thermocouple and the cell can may vary substantially, and the thermocouple sometimes loses contact during cycling.
+
+Internal resistance measurements were obtained during charging at 80% SOC by averaging 10 pulses of ±3.6C with a pulse width of 30 ms (2017-05-12 and 2017-06-30) or 33 ms (2018-04-12).
+
+The following repository contains some starter code to load the datasets in either MATLAB or python:
+
+<https://github.com/rdbraatz/data-driven-prediction-of-battery-cycle-life-before-capacity-degradation>
+
+**Experimental design**
+
+- All cells were cycled with one-step or two-step charging policies. The charging time varies from ~8 to 13.3 minutes (0-80% SOC). There are generally two cells tested per policy, with the exception of 3.6C(80%).
+- 1 minute and 1 second rests were placed after reaching 80% SOC during charging and after discharging, respectively.
+- We cycle to 80% of nominal capacity (0.88 Ah).
+- An initial C/10 cycle was performed in the beginning of each test.
+- The cutoff currents for the constant-voltage steps were C/50 for both charge and discharge.
+- The pulse width of the IR test is 30 ms.
+
+**Experimental notes**
+
+- The computer automatically restarted twice. As such, there are some time gaps in the data.
+- The temperature control is somewhat inconsistent, leading to variability in the baseline chamber temperature.
+- The tests in channels 4 and 8 did not successfully start and thus do not have data.
+- The thermocouples for channels 15 and 16 were accidentally switched.
+
+**Data notes**
+
+- Cycle 1 data is not available in the struct. The sampling rate for this cycle was initially too high, so we excluded it from the data set to create more manageable file sizes.
+- The cells in Channels 1, 2, 3, 5, and 6 (3.6C(80%) and 4C(80%) policies) were stopped at the end of this batch and resumed in the 2017-06-30 batch. This pause in cycling lead to a rise in capacity upon resuming the tests.
+- The tests in channels 13, 19, 21, 22, and 31 were terminated before the cells reached 80% of nominal capacity.
+
+#### Paper
+
+[Data-driven prediction of battery cycle life before capacity degradation](https://www.nature.com/articles/s41560-019-0356-8)
+
+abstract
+
+Accurately predicting the lifetime of complex, nonlinear systems such as lithium-ion batteries is critical for accelerating technology development. However, diverse aging mechanisms, significant device variability and dynamic operating conditions have remained major challenges. We generate a comprehensive dataset consisting of 124 commercial lithium iron phosphate/graphite cells cycled under fast-charging conditions, with widely varying cycle lives ranging from 150 to 2,300 cycles. Using discharge voltage curves from early cycles yet to exhibit capacity degradation, we apply machine-learning tools to both predict and classify cells by cycle life. Our best models achieve 9.1% test error for quantitatively predicting cycle life using the first 100 cycles (exhibiting a median increase of 0.2% from initial capacity) and 4.9% test error using the first 5 cycles for classifying cycle life into two groups. This work highlights the promise of combining deliberate data generation with data-driven modelling to predict the behaviour of complex dynamical systems.
+
+#### Citation
+
+Severson *et al*. Data-driven prediction of battery cycle life before capacity degradation. *Nature Energy* volume 4, pages 383–391 (2019).
+
+## Combined Cycle Power Plant
+
+## [Combined Cycle Power Plant Data Set](https://archive.ics.uci.edu/ml/datasets/Combined+Cycle+Power+Plant)
+
+3.5MB(compressed)
+
+Combined Cycle Power Plant over 6 years.
+
+![](https://img.shields.io/badge/sector-power-skyblue.svg) ![](https://img.shields.io/badge/labeled-yes-blue.svg) ![](https://img.shields.io/badge/time--series-no-red.svg)  ![](<https://img.shields.io/badge/simulation-no-red.svg>)
+
+#### Data Set Information:
+
+| Data Set Characteristics | Attribute Characteristics | Associated Tasks |
+| ------------------------ | ------------------------- | ---------------- |
+| Multivariate             | Real                      | Regression       |
+
+| Number of Instances | Number of Attributes | 
+| ------------------- | -------------------- | 
+| 9568                | 4                    | 
+
+ The dataset contains 9568 data points collected from a Combined Cycle Power Plant over 6 years (2006-2011), when the power plant was set to work with full load. Features consist of hourly average ambient variables Temperature (T), Ambient Pressure (AP), Relative Humidity (RH) and Exhaust Vacuum (V) to predict the net hourly electrical energy output (EP) of the plant.
+ A combined cycle power plant (CCPP) is composed of gas turbines (GT), steam turbines (ST) and heat recovery steam generators. In a CCPP, the electricity is generated by gas and steam turbines, which are combined in one cycle, and is transferred from one turbine to another. While the Vacuum is collected from and has effect on the Steam Turbine, he other three of the ambient variables effect the GT performance.
+ For comparability with our baseline studies, and to allow 5x2 fold statistical tests be carried out, we provide the data shuffled five times. For each shuffling 2-fold CV is carried out and the resulting 10 measurements are used for statistical testing.
+
+#### Variables
+
+Features consist of hourly average ambient variables 
+- Temperature (T) in the range 1.81°C and 37.11°C, (input) - (data에서 AT)
+- Ambient Pressure (AP) in the range 992.89-1033.30 milibar, (input)
+- Relative Humidity (RH) in the range 25.56% to 100.16% (input)
+- Exhaust Vacuum (V) in teh range 25.36-81.56 cm Hg (input)
+- Net hourly electrical energy output (EP) 420.26-495.76 MW
+  The averages are taken from various sensors located around the plant that record the ambient variables every second. The variables are given without normalization. (output) 
+
+#### Paper
+
+[Prediction of Electrical Output Power of Combined Cycle Power Plant Using
+Regression ANN Model](https://www.researchgate.net/profile/Ahmed_Hassan214/publication/325604989_Prediction_of_Electrical_Output_Power_of_Combined_Cycle_Power_Plant_Using_Regression_ANN_Model/links/5b180b45a6fdcca67b5da1f2/Prediction-of-Electrical-Output-Power-of-Combined-Cycle-Power-Plant-Using-Regression-ANN-Model.pdf)
+
+**Abstract**
+
+Recently, regression artificial neural networks are used to model various systems that have high dimensionality with nonlinear relations. The system under study must have enough dataset available to train the neural network. 
+
+The aim of this work is to apply and experiment various options effects on feed-foreword artificial neural network (ANN) which used to obtain regression model that predicts electrical output power (EP) of combined cycle power plant based on 4 inputs.
+
+Dataset is obtained from an open online source. The work shows and explains the stochastic behavior of the regression neural, experiments the effect of number of neurons of the hidden layers. It shows also higher performance for larger training dataset size; at the other hand, it shows different effect of larger number of variables as input. In addition, two different training functions are applied and compared. Lastly, simple statistical study on the error between real values and estimated values using ANN is conducted, which shows the reliability of the model. This paper provides a quick reference to the effects of main parameters of regression neural networks. 
+
+[Prediction of full load electrical power output of a base load operated combined cycle power plant using machine learning methods](https://www.sciencedirect.com/science/article/pii/S0142061514000908?via%3Dihub)
+
+**highlights**
+
+- A comparison of regression analysis for predicting electrical power output of a power plant.
+
+- Determination of the best subset among all feature subsets of the dataset.
+
+- Determination of the most successful regression method using the best subset.
+
+**Abstract**
+
+Predicting full load electrical power output of a base load power plant is important in order to maximize the profit from the available megawatt hours. This paper examines and compares some machine learning regression methods to develop a predictive model, which can predict hourly full load electrical power output of a combined cycle power plant. The base load operation of a power plant is influenced by four main parameters, which are used as input variables in the dataset, such as ambient temperature, atmospheric pressure, relative humidity, and exhaust steam pressure. These parameters affect electrical power output, which is considered as the target variable. The dataset, which consists of these input and target variables, was collected over a six-year period. First, based on these variables the best subset of the dataset is explored among all feature subsets in the experiments. Then, the most successful machine learning regression method is sought for predicting full load electrical power output. Thus, the best performance of the best subset, which contains a complete set of input variables, has been observed using the most successful method, which is Bagging algorithm with REPTree, with a mean absolute error of 2.818 and a Root Mean-Squared Error of 3.787.
+
+#### Citation Request:
+
+Pınar Tüfekci, Prediction of full load electrical power output of a base load operated combined cycle power plant using machine learning methods, International Journal of Electrical Power & Energy Systems, Volume 60, September 2014, Pages 126-140, ISSN 0142-0615, [[Web Link\]](http://dx.doi.org/10.1016/j.ijepes.2014.02.027).
+([[Web Link\]](http://www.sciencedirect.com/science/article/pii/S0142061514000908))
+
+
+## WM-811K(LSWMD)
+
+# Semicon
+
+## [WM-811K(LSWMD)](http://mirlab.org/dataSet/public/)
+
+214 MB
+
+811457 wafer maps, in which each wafer map was collected from real-world fabrication. Domain experts were recruited to annotate the pattern type for approximately 20% of the wafer maps in the WM-811K dataset. This dataset is published by Roger Jang, professor of [MIR lab](http://mirlab.org/dataSet/public/)
+
+  ![](https://img.shields.io/badge/sector-semicon-blue.svg)
+  ![](https://img.shields.io/badge/labeled-yes-blue.svg)
+  ![](https://img.shields.io/badge/time--series-no-red.svg)
+  ![](<https://img.shields.io/badge/simulation-no-red.svg>) 
+  
+ - [.pkl data](https://www.kaggle.com/qingyi/wm811k-wafer-map)
+  
+## About Dataset
+
+### First Row of Dataset        
+
+| WaferMap | dieSize | lotName | waferIndex     | trainTestLabel                           |failureType|
+| -------- | ------------------ | ----------------- | -------------- | -------------------------- |----|
+| [[0,0,0,0,0,0,0,0 ..   | 1683.0               | lot1             | 1.0 | [[Training]]                 |[[none]]|
+| ... | ...| ...| ...| ... | ...|
+
+### Attributes Explanation
+
+1) **WaferMap** : WaferMap represented as weight * height size numpy array
+  - 0 : Area that die doesn't exist
+  - 1 : Area that normal die exists
+  - 2 : Area that defect die exists
+2) **dieSize** : # of all dies in wafer
+3) **lotName** : Name of the lot, ascending order
+4) **waferIndex** : Index of the wafer in correspoding lot. Every lot is supposed to have 25 wafers, but some of them don't have 25 wafers
+5) **trainTestlabel** : Label for separating train/test data. 
+  - train : Labeled wafer, training set
+  - test : Labeled wafer, test set
+  - Null : Unlabeled wafer
+6) **failureType** : Type of failure
+  - none : Normal wafer without defect pattern
+  - Null : Wafer without label
+  
+### About the shape of wafermap
+![](img/readme_1.png)
+
+  
+- As the size of wafermap distributes randomly, we can't just upscale all wafer to (180, 150) or downscale all wafers to (5,3)
+- We have to manually pick 
+  - the range of wafermap size
+  - upscale / downscale / zero-padding
+  - how to upscale / downscale (e.g. linear, nearest, ... )
+  - how wafer differs from the square
+
+### Paper
+1. [Wafer Map Failure Pattern Recognition and Similarity Ranking for Large-Scale Data Sets (2014)](http://ieeexplore.ieee.org/document/6932449/) by Roger Jang, professor of MIR lab
+
+   keywords : Feature extraction, Transforms, Support vector machines, Semiconductor device modeling, Pattern recognition, Fabrication
+   
+2. [Wafer Defect Detection and Recognition Based on Local and Nonlocal Linear Discriminant Analysis and Dynamic Ensemble of Gaussian Mixture Models (2015)](http://www.aas.net.cn/EN/abstract/abstract18795.shtml)
+
+   keywords : Semiconductor Manufacturing, Wafer Defect, Pattern Recognition, Manifold Learning, Gaussian Mixture Model
+   
+3. [Wafer Map Defect Detection and Recognition Using Joint Local and Nonlocal Linear Discriminant Analysis (2015)](https://www.researchgate.net/publication/283636177_Wafer_Map_Defect_Detection_and_Recognition_Using_Joint_Local_and_Nonlocal_Linear_Discriminant_Analysis)
+
+   keywords : Wafer Map, Defect Detection, Defect Recogniiton, Manifold Learning, Pattern Recognition, Feature Extraction
+   
+4. [Wafer Defect Patterns Recognition Based on OPTICS and Multi-Label Classification (2016)](http://ieeexplore.ieee.org/document/7867343/)
+
+   keywords : Pattern recognition, Feature extraction, Support vector machines, Optics, Training, Manufacturing, Semiconductor device modeling
+   
+5. [Decision Tree Ensemble-Based Wafer Map Failure Pattern Recognition Based on Radon Transform-Based Features (2018)](https://ieeexplore.ieee.org/document/8293829)
+
+   keywords : Transforms, Radon, Feature extraction, Decision trees, Interpolation, Data mining
+   
+
+
+## Panasonic 18650PF Li-ion Battery Data
+
+# [Panasonic 18650PF Li-ion Battery Data](https://data.mendeley.com/datasets/wykht8y7tg/1#folder-df7a873b-ae5f-4a63-ab5c-8f9792b59429)
+
+191.1 MB (compressed)
+
+A brand new 2.9Ah Panasonic 18650PF cell was tested in an 8 cu.ft. thermal chamber with a 25 amp, 18 volt Digatron Firing Circuits Universal Battery Tester channel.
+
+ ![](https://img.shields.io/badge/sector-battery-ff69b4.svg)  ![](https://img.shields.io/badge/labeled-no-red.svg)  ![](https://img.shields.io/badge/time--series-yes-blue.svg)  ![](<https://img.shields.io/badge/simulation-no-red.svg>)
+
+#### Data Set Information
+
+| Data Set Characteristics | Attribute Characteristics | Associated Tasks |
+| ------------------------ | ------------------------- | ---------------- |
+| Multivariate             | Real                      | Regression       |
+
+A series of tests were performed at five different temperatures, as follows (battery charged after each test at 1C rate to 4.2V, 50mA cut off, with battery temperature 12degC or greater):
+
+1. Cycled at 1C rate at 25degC ten times to break it in (this data is not included)
+2. C/20 discharge and charge test
+3. Five pulse discharge HPPC test (0.5, 1, 2, 4, 6C) performed at 100, 95, 90, 80, 70..., 30, 25, 20, 15, 10, 5, 0 % SOC.  The logged data file only includes the pulses, and does not include the subsequent discharges between the pulses, refer to the amp-hour data to determine the SOC for each pulse set.  The discharges between pulses are included in another file, with "dis5_10p" in the name, in case this data is needed.
+4. EIS test performed from 1mHz to 100, 95, 90, 80, 70..., 30, 25, 20, 15, 10, 5, 0 % SOC.
+5. Series of nine drive cycles performed, in following order: Cycle 1, Cycle 2, Cycle 3, Cycle 4, US06, HWFET, UDDS, LA92, Neural Network (NN).  Cycles 1-4 consist of random mix of US06, HWFET, UDDS, LA92, and Neural Network drive cycels.  Neural Network drive cycle consists of combination of portions of US06 and LA92 drive cycle, and was designed to have some additional dynamics which may be useful for training neural networks.  The drive cycle power profile is calculated for an electric Ford F150 truck with a 35kWh battery pack scaled for a single 18650PF cell.
+6. Steps 3 through 5 are repeated for ambient temperatures of 25degC, 10degC, 0degC, -10degC, and -20degC, in that order. For tests with ambient temperature below 10degC, no regen is included in the test.  The drive cycle tests are terminated when voltage first hits 2.5V for 25degC and 10degC and after 2.32Ah (80% DOD), 2.03Ah (70% DOD), and 1.74Ah (60% DOD) have been discharged at 0degC, -10degC, and -20degC respectively.
+7. The nine drive cycles are repeated ("-20degC Trise" folder) with a starting chamber temperature of -20degC, which is then allowed to drift upwards such that the battery temperature rises up to 10 or 20degC during the drive cycle.  These tests allow for testing battery models or SOC algorithms with varied temperature drive cycle tests.  The battery ages as more tests are performed though, so these test results may not perfectly compare models developed from earlier tests.
+8. Cycles 1 through 3 are repeated ("-20degC Trise with pause" folder) with an ambient temperature starting at -20degC, which is then allowed to drift upwards such that battery temperature rises as high as 25degC.  Each cycle has a 1, 2, or 3 hour pause inserted in the middle.  The cycles and charges are saved in a single contiguous file to allow for evaluation of battery models or SOC algorithms over a contiguous data set with varied temperature.
+9. The nine drive cycles are repeated ("10degC Trise" folder) with a starting ambient temperature of 10degC, similar to that described in step 7.
+10. Cycles 1 through 4 are repeated ("10degC Trise with pauses")with a starting ambient temperature of 10degC, similar to that described in step 8.  These cycles include regen power though, since temperature is greater than 10degC.
+11. The battery is cycled ten times at 25degC at a rate of 1C ("C20 OCV Test_end_of_tests" folder).  This is followed by two reference capacity tests performed at 1C, which show that the 1C battery capacity has fallen from 2.8Ah to 2.3Ah after the series of tests performed (approximately 110 cycles).
+
+**File naming convention:**
+The file names begin with the date the test started, and are followed by the time the test started and a descriptive name, such as in the following example:
+"03-18-17_02.17 25degC_Cycle_1_Pan18650PF.mat"
+
+Date: "03-18-18" (March 18th, 2018)
+Time: "02.17" (2:17am)
+Descriptor: "25degC_Cycle_1_Pan18650PF"
+
+The naming convention allows for sorting by date and test time when all the files are placed in one folder.  This may be useful when trying to determine which charge is associated with which drive cycle, for example, or when looking at aging.
+
+**Time step:**
+Tests considered more important, such as drive cycles, were saved with a 0.1 second time step.  Other test portions, such as charges and pauses, were considered to have slower dynamics and be less important, and were therefore save at a lower data rate.  Be aware of these variances in data rate, and upsample the logged data if necessary to achieve a higher or consistent data rate.
+
+**Repeated data:**
+Due to an issue with the battery tester's logging, many of the US06, HWFET, UDDS, LA92, and NN drive cycles were saved in a single long file with the charges and pauses which occured between tests.  The data rate of these files is not consistent (lower data logging rate for charges and pauses).  These continuous files may be useful for some applications, and were therefore left.  The files were also split, such that seperate US06, HWFET, etc files are provided.  Because of this some drive cycle data is included twice - in the long contiguous file as well as in the split files.
+
+#### Variables
+
+- TimeStamp (timestamp in MM/DD/YYYY HH:MM:SS AM format)
+- Voltage (measured cell terminal voltage, sense leads welded directly to battery terminal)
+  Current (measure current in amps)
+
+- Ah (measured amp-hours, with Ah counter reset before each charge, test, or drive cycle)
+
+- Wh (measured watt-hours, with Wh counter reset after each charge, test, or drive cycle)
+- Power (measure power in watts)
+- Battery_Temp_degC (battery case temperature, at middle of battery, in degrees Celsius measured with a thermocouple, measurement corrected for thermocouple offset at lower temperatures)
+- Time (time in seconds, starts at zero at beginning of each data file)
+- Chamber_Temp_degC (measured chamber temperature in degrees Celsius)
+
+#### Citation
+
+The included tests were performed at the University of Wisconsin-Madison by Dr. Phillip Kollmeyer (phillip.kollmeyer@gmail.com).  If this data is utilized for any purpose, it should be appropriately referenced.
+
+## Experiments on Li-ion batteries
+
+### [Experiments on Li-ion batteries](https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/#battery)
+
+56.5MB, 11.1MB, 93.7MB, 14.7MB, 8.7MB, 24.9MB(Data Set1~6, compressed)
+
+ ![](https://img.shields.io/badge/sector-battery-ff69b4.svg)  ![](https://img.shields.io/badge/labeled-no-red.svg)  ![](https://img.shields.io/badge/time--series-yes-blue.svg)  ![](<https://img.shields.io/badge/simulation-no-red.svg>)
+
+#### Data Set Information
+
+| Data Set Characteristics | Attribute Characteristics | Associated Tasks |
+| ------------------------ | ------------------------- | ---------------- |
+| Multivariate             | Real                      | Regression       |
+
+A set of four Li-ion batteries were run through 3 different operational profiles (charge, discharge and impedance) at room temperature (24 deg C).
+
+**Charge**
+
+Charging was carried out in a constant current (CC) mode at 1.5A until the battery voltage reached 4.2V and then continued in a constant voltage (CV) mode until the charge current dropped to 20mA. 
+
+**Discharge**
+
+Discharge was carried out using a 0.05Hz square wave loading profile of 4A amplitude and 50% duty cycle until the battery voltage fell to 2.0V, 2.2V, 2.5V and 2.7V for batteries 25, 26, 27 and 28 respectively.
+
+**Impedance**
+
+Impedance measurement was carried out through an electrochemical impedance spectroscopy (EIS) frequency sweep from 0.1Hz to 5kHz. 
+
+#### Variables
+
+type : operation  type, can be charge, discharge or impedance
+ambient_temperature : ambient temperature (degree C)
+time : the date and time of the start of the cycle, in MATLAB  date vector format
+**charge**
+Voltage_measured : Battery terminal voltage (Volts)
+Current_measured : Battery output current (Amps)
+Temperature_measured : Battery temperature (degree C)
+Current_charge : Current measured at charger (Amps)
+Voltage_charge : Voltage measured at charger (Volts)
+Time : Time vector for the cycle (secs)
+**discharge**
+Voltage_measured : Battery terminal voltage (Volts)
+Current_measured : Battery output current (Amps)
+Temperature_measured : Battery temperature (degree C)
+Current_charge : Current measured at load (Amps)
+Voltage_charge : Voltage measured at load (Volts)
+Time : Time vector for the cycle (secs)
+Capacity : Battery capacity (Ahr) for discharge till 2.7V 
+**impedance**
+Sense_current : Current in sense branch (Amps)
+Battery_current : Current in battery branch (Amps)
+Current_ratio : Ratio of the above currents 
+Battery_impedance : Battery impedance (Ohms) computed from raw data
+Rectified_impedance : Calibrated and smoothed battery impedance (Ohms) 
+Re : Estimated electrolyte resistance (Ohms)
+Rct : Estimated charge transfer resistance (Ohms)
+
+#### Paper
+
+1. **Verification of a Remaining Flying Time Prediction System for Small Electric Aircraft***, Edward F. Hogge, Brian M. Bole, Sixto L. Vazquez, Jose Celaya*, Annual Conference of the Prognostics and Health Management, 2015
+2. **Adaptation of an Electrochemistry-based Li-Ion Battery Model to Account for Deterioration Observed Under Randomized Use***, Bole, B. and Kulkarni, C. and Daigle, M.*, Annual Conference of the Prognostics and Health Management Society, 2014
+3. **Particle-filtering-based prognosis framework for energy storage devices with a statistical characterization of state-of-health regeneration phenomena***, Olivares, Benjam{\'\i}n E and Munoz, Cerda and Orchard, Marcos E and Silva, Jorge F*, Instrumentation and Measurement, IEEE Transactions on, Vol. 62 No. 2, 364--376, 2013
+4. **Major Challenges in Prognostics: Study on Benchmarking Prognostics Datasets***, Eker, OF and Camci, F and Jennions, IK*, European Conference of Prognostics and Health Management Society, 2012
+5. **Lithium-ion battery remaining useful life estimation based on nonlinear ar model combined with degradation feature***, Liu, Datong and Luo, Yue and Peng, Yu and Peng, Xiyuan and Pecht, Michael*, Annual Conference of the Prognostics and Health Management Society 2012, 24--27, 2012
+6. **Data-driven prognostics for lithium-ion battery based on Gaussian process regression***, Liu, Datong and Pang, Jingyue and Zhou, Jianbao and Peng, Yu*, Prognostics and System Health Management (PHM), 2012 IEEE Conference on, 1--5, 2012
+7. **Health monitoring and remaining useful life estimation of lithium-ion aeronautical batteries***, Penna, JAM and Nascimento, CL and Ramos Rodrigues, L*, Aerospace Conference, 2012 IEEE, 1--12, 2012
+8. **Designing data-driven battery prognostic approaches for variable loading profiles: Some lessons learned***, Saxena, Abhinav and Celaya, Jos{\'e} R and Roychoudhury, Indranil and Saha, Sankalita and Saha, Bhaskar and Goebel, Kai*, Eur. Conf. Prognost. Health Manag. Soc, 2012
+9. **Dynamic battery remaining useful life estimation: An on-line data-driven approach***, Zhou, Jianbao and Liu, Datong and Peng, Yu and Peng, Xiyuan*, Instrumentation and Measurement Technology Conference (I2MTC), 2012 IEEE International, 2196--2199, 2012
+10. **Model adaptation for prognostics in a particle filtering framework***, Saha, Bhaskar and Goebel, Kai*, International Journal of Prognostics and Health Management, Vol. 2 No. 1, 10, 2011
+11. **Study on impedance model of Li-ion battery***, Luo, Weilin and Lv, Chao and Wang, Lixin and Liu, Chao*, Industrial Electronics and Applications (ICIEA), 2011 6th IEEE Conference on, 1943--1947, 2011
+12. **An integrated health and contingency management case study on an autonomous ground robot***, Tang, Liang and Zhang, Bin and DeCastro, Jonathan and Hettler, Eric*, Control and Automation (ICCA), 2011 9th IEEE International Conference on, 584--589, 2011
+13. **Transient behavior modeling and physical meaning analysis for Battery***, Xiangyang, Gao and Jun, Zhang and Ning, Ning*, Computer Application and System Modeling (ICCASM), 2010 International Conference on, V2--383, 2010
+14. **Comparison of prognostic algorithms for estimating remaining useful life of batteries***, Saha, Bhaskar and Goebel, Kai and Christophersen, Jon*, Transactions of the Institute of Measurement and Control, Vol. 31 No. Wed Mar 04 2015 00:00:00 GMT-0800 (PST), 293--308, 2009
+15. **Prognostics methods for battery health monitoring using a Bayesian framework***, Saha, Bhaskar and Goebel, Kai and Poll, Scott and Christophersen, Jon*, Instrumentation and Measurement, IEEE Transactions on, Vol. 58 No. 2, 291--296, 2009
+16. **Modeling Li-ion battery capacity depletion in a particle filtering framework***, Saha, Bhaskar and Goebel, Kai*, Proceedings of the annual conference of the prognostics and health management society, 2009
+
+#### Citation
+
+B. Saha and K. Goebel (2007). "Battery Data Set", NASA Ames Prognostics Data Repository (http://ti.arc.nasa.gov/project/prognostic-data-repository), NASA Ames Research Center, Moffett Field, CA
+
+
+## UK ERC dataset
+
+## [UK-DALE dataset](http://jack-kelly.com/data/)
+
+3.5GB(compressed)
+
+This dataset records the power demand from five houses. In each house we record both the whole-house mains power demand every six seconds as well as power demand from individual appliances every six seconds. In three of the five houses (houses 1, 2 and 5) we also record the whole-house voltage and current at 16 kHz.
+
+![](https://img.shields.io/badge/sector-power-skyblue.svg) ![](https://img.shields.io/badge/labeled-yes-blue.svg)  ![](https://img.shields.io/badge/time--series-yes-blue.svg) ![](https://img.shields.io/badge/simulation-no-red.svg)
+
+#### Data Set Information:
+
+All five homes have whole-home power recorded every six seconds; and appliance-level data is at six second resolution. Homes 1, 2 and 5 also have whole-home active power and apparent power at 1 second resolution. The six-second and one-second data is stored in CSV files where the first column is the UNIX timestamp.
+
+UK-DALE uses a data format similar to that used by the first public disaggregation dataset, the Reference
+Energy Disaggregation Data Set (REDD)10.
+There are five directories, one per house. The directories are named house_ox> where x is an integer between 1 and 5.
+Each directory contains a set of channel_oi>.dat CSV files (one file per electricity meter i) and a labels.dat file which is a CSV file which maps from channel number i to appliance name. All CSV files in UK-DALE use a single space as the column separator (as per REDD).
+One way in which UK-DALE differs from REDD is that UK-DALE includes a set of detailed metadata files. These follow the NILM Metadata schema37.
+
+The metadata files are in YAML text file format (YAML is a superset of the JSON format). This metadata describes properties such as the specifications of each appliance; the mains wiring between the meters and between meters and appliances; exactly which measurements are provided by each meter; which room each appliance belongs in etc.
+
+The labels.dat file in each directory is redundant and is only included to provide compatibility with REDD. All data in UK-DALE as of January 2015 are available from the UK Energy Research Council’s Energy Data Centre. 
+
+The latter source will be updated as we collect more data. There are three forms of data in UK-DALE:
+
+- The 6 second data from the Current Cost meters (Data Citation 1).
+- The 1 second data from our sound card power meter (Data Citation 1). 
+- The 16 kHz data recorded by our sound card power meter (Data Citation 2). The complete set of 16
+  kHz files requires 4 TBytes of storage. The 16 kHz data is supplied as a set of 200 MByte files. Each file
+  records 1 h of data.
+
+#### Paper
+
+[The UK-DALE dataset, domestic appliance-level electricity demand and whole-house demand from five UK homes](https://www.nature.com/articles/sdata20157)
+
+#### Citation Request
+
+Kelly J., Knottenbelt W. 2015. UKERC Energy Data Centre. <http://dx.doi.org/10.5286/UKERC.EDC.000001>
+
+Kelly J., Knottenbelt W. 2015. UKERC Energy Data Centre. <http://dx.doi.org/10.5286/UKERC.EDC.000002>
+
+This data is made freely available under Creative Commons Attribution 4.0 International (CC BY 4.0). See more at <https://creativecommons.org/licenses/by/4.0/>
+
+
+## CNC Mill Tool Wear
+
+## Mechanical    
+### [CNC Mill Tool Wear](https://www.kaggle.com/shasun/tool-wear-detection-in-cnc-mill/data) 
+
+CNC Mill Tool Wear data was provided to perform classification studies such as 'Tool wear detection' and 'Detection of inadequate clamping'.     
+
+A series of machining experiments were run on 2" x 2" x 1.5" wax blocks in a CNC milling machine in the System-level Manufacturing and Automation Research Testbed (SMART) at the University of Michigan. Machining data was collected from a CNC machine for variations of tool condition, feed rate, and clamping pressure. Each experiment produced a finished wax part with an "S" shape - S for smart manufacturing - carved into the top face, as shown in `test_artifact.jpg` (included in the dataset).  
+
+General data from each of the 18 different experiments are given in `train.csv`  Time series data was collected from the 18 experiments with a sampling rate of `100 ms` and are separately reported in files `experiment_01.csv` to `experiment_18.csv`. Each `experiment_xx.csv` file consists of 48 columns and the number of each row is from `experiment_01.csv` to `experiment_18.csv` (1056, 1669, 1522, 533, 463, 1297, 566, 606, 741, 1302, 2315, 2276 , 2234, 2333, 1382, 603, 2151, 2254). Time series data from 18 experiments is collected at a sampling rate of 100 ms.          
+
+![](https://img.shields.io/badge/sector-mechanical-purple.svg)
+![](https://img.shields.io/badge/labeled-meta--only-yellow.svg)
+![](https://img.shields.io/badge/time--series-yes-blue.svg)  
+![](https://img.shields.io/badge/tool_wear_detection-gray.svg)
+![](https://img.shields.io/badge/detection_of_inadequate_clamping-gray.svg) ![](<https://img.shields.io/badge/simulation-yes-blue.svg>)      
+
+#### Data Set Information  
+
+- Data Set    
+
+
+| Data Set          | Number of row | Data Set          | Number of row |
+| ----------------- | ------------- | ----------------- | ------------- |
+| experiment_01.csv | 1056          | experiment_10.csv | 1302          |
+| experiment_02.csv | 1669          | experiment_11.csv | 2315          |
+| experiment_03.csv | 1522          | experiment_12.csv | 2276          |
+| experiment_04.csv | 533           | experiment_13.csv | 2234          |
+| experiment_05.csv | 463           | experiment_14.csv | 2333          |
+| experiment_06.csv | 1297          | experiment_15.csv | 1382          |
+| experiment_07.csv | 566           | experiment_16.csv | 603           |
+| experiment_08.csv | 606           | experiment_17.csv | 2151          |
+| experiment_09.csv | 741           | experiment_18.csv | 2254          |
+|                   |               | Train.csv         | 18            |
+
+
+
+- Attribute explanation - `Train.csv`       
+
+| Inputs(features)     | Description                                                  | Outputs(predictions)     | Description                                                  |
+| -------------------- | ------------------------------------------------------------ | ------------------------ | ------------------------------------------------------------ |
+| No.experiment number | -                                                            | tool_condition           | label for unworn and worn tools                              |
+| material             | wax                                                          | machine_completed        | indicator for if machine was completed without the workspace moving out of the pneumatic vise |
+| feed_rate            | relative velocity of the cutting tool along the workpiece(mm/s) | passed_visual_inspection | indicator for if the workpiece passed visual   inspection, only available for experiments where machining was completed |
+| clamp_pressure       | pressure used to hold the workpiece in the wise(bar)         | -                        |                                                              |
+
+The 'tool_condition' variable indicates whether the tool is unworn or worn. 
+
+- Attributes explanation - `18 experiment_xx.csv`     
+
+  There are a total of 48 attributes.   
+
+  | Attribute name            | Type    | Description                                                  |
+  | ------------------------- | ------- | ------------------------------------------------------------ |
+  | X1_ActualPosition         | float64 | actual x position of part (mm)                               |
+  | X1_ActualVelocity         | float64 | actual x velocity of part (mm/s)                             |
+  | X1_ActualAcceleration     | float64 | actual x acceleration of part (mm/s/s)                       |
+  | X1_CommandPosition        | float64 | reference x position of part (mm)                            |
+  | X1_CommandVelocity        | float64 | reference x velocity of part (mm/s)                          |
+  | X1_CommandAcceleration    | float64 | reference x acceleration of part (mm/s/s)                    |
+  | X1_CurrentFeedback        | float64 | current (A)                                                  |
+  | X1_DCBusVoltage           | float64 | voltage (V)                                                  |
+  | X1_OutputCurrent          | float64 | current (A)                                                  |
+  | X1_OutputVoltage          | float64 | voltage (V)                                                  |
+  | X1_OutputPower            | float64 | power (kW)                                                   |
+  | Y1_ActualPosition         | float64 | actual y position of part (mm)                               |
+  | Y1_ActualVelocity         | float64 | actual y velocity of part (mm/s)                             |
+  | Y1_ActualAcceleration     | float64 | actual y acceleration of part (mm/s/s)                       |
+  | Y1_CommandPosition        | float64 | reference y position of part (mm)                            |
+  | Y1_CommandVelocity        | float64 | reference y velocity of part (mm/s)                          |
+  | Y1_CommandAcceleration    | float64 | reference y acceleration of part (mm/s/s)                    |
+  | Y1_CurrentFeedback        | float64 | current (A)                                                  |
+  | Y1_DCBusVoltage           | float64 | voltage (V)                                                  |
+  | Y1_OutputCurrent          | float64 | current (A)                                                  |
+  | Y1_OutputVoltage          | float64 | voltage (V)                                                  |
+  | Y1_OutputPower            | float64 | power (kW)                                                   |
+  | Z1_ActualPosition         | float64 | actual z position of part (mm)                               |
+  | Z1_ActualVelocity         | float64 | actual z velocity of part (mm/s)                             |
+  | Z1_ActualAcceleration     | float64 | actual z acceleration of part (mm/s/s)                       |
+  | Z1_CommandPosition        | float64 | reference z position of part (mm)                            |
+  | Z1_CommandVelocity        | float64 | reference z velocity of part (mm/s)                          |
+  | Z1_CommandAcceleration    | float64 | reference z acceleration of part (mm/s/s)                    |
+  | Z1_CurrentFeedback        | float64 | current (A)                                                  |
+  | Z1_DCBusVoltage           | float64 | voltage (V)                                                  |
+  | Z1_OutputCurrent          | float64 | current (A)                                                  |
+  | Z1_OutputVoltage          | float64 | voltage (V)                                                  |
+  | S1_ActualPosition         | float64 | actual position of spindle (mm)                              |
+  | S1_ActualVelocity         | float64 | actual velocity of spindle (mm/s)                            |
+  | S1_ActualAcceleration     | float64 | actual acceleration of spindle (mm/s/s)                      |
+  | S1_CommandPosition        | float64 | reference position of spindle (mm)                           |
+  | S1_CommandVelocity        | float64 | reference velocity of spindle (mm/s)                         |
+  | S1_CommandAcceleration    | float64 | reference acceleration of spindle (mm/s/s)                   |
+  | S1_CurrentFeedback        | float64 | current (A)                                                  |
+  | S1_DCBusVoltage           | float64 | voltage (V)                                                  |
+  | S1_OutputCurrent          | float64 | current (A)                                                  |
+  | S1_OutputVoltage          | float64 | voltage (V)                                                  |
+  | S1_OutputPower            | float64 | current (A)                                                  |
+  | S1_SystemInertia          | float64 | torque inertia (kg*m^2)                                      |
+  | M1_CURRENT_PROGRAM_NUMBER | float64 | number the program is listed under on the CNC                |
+  | M1_sequence_number        | float64 | line of G-code being executed                                |
+  | M1_CURRENT_FEEDRATE       | float64 | instantaneous feed rate of spindle                           |
+  | Machining_Process         | object  | the current machining stage being performed. Includes preparation, tracing up  and down the "S" curve involving different layers, and repositioning of the spindle as it moves through the air to a certain starting point |
+
+
+- Two ways to use CNC measurements   
+
+  (1) Taking every CNC measurement as an independent observation where the operation being performed is given in the Machining_Process column. Active machining operations are labeled as "Layer 1 Up", "Layer 1 Down", "Layer 2 Up", "Layer 2 Down", "Layer 3 Up", and "Layer 3 Down".    
+
+  (2) Taking each one of the 18 experiments (the entire time series) as an observation for time series classification     
+
+#### Paper  
+
+1. [CNC Machine Tool’s wear diagnostic and prognostic by
+   using dynamic bayesian networks](<https://hal.archives-ouvertes.fr/hal-00672204/document>)      
+
+keywords: dynamic bayesian networks, Diagnostic, Prognostic, Remaining Useful Life, Condition
+Based Maintenance, Hidden Markov Models, Monitoring data, Tool wear     
+
+
+##### Data Download Link   
+Data Capacity(Compressed):   
+
+2.56MB   
+
+Data Capacity(Raw):   
+
+11.6MB   
+
+## PHM Data Challenge 17
+
+## Mechanical   
+
+### [PHM DATA Challenge 17](<https://www.phmsociety.org/events/conference/phm/17/data-challenge>): predict faulty regimes of operation of a train car using the data provided and physics-based modeling methods.       
+
+Training and testing data sets are provided. The data given represents spectral features over non-overlapping frequency bands calculated from filtered sensor signals in sequential time frames, for typical frequencies discussed in the literature. One experiment consists of a matrix of 90 feature values over time.    
+
+![](https://img.shields.io/badge/sector-mechanical-purple.svg)
+![](https://img.shields.io/badge/labeled-implicit-green.svg)
+![](https://img.shields.io/badge/time--series-yes-blue.svg) ![](<https://img.shields.io/badge/simulation-yes-blue.svg>)          
+
+#### Data Set Information    
+
+Timestamp: May 24, 2017 - 12:18pm    
+
+__Training data__   
+
+The training data consists of 200 csv files. Training data will be given in a collection of files "*Training-ddd.csv*" representing instances for all 90 features (*f101*,…,*f190*) described in Table 1 for all experiments described in Table 2. __It only represents nominal operation, where all systems and subsystems operate in a healthy manner__.           
+
+- 200 'train' files consist of 90 columns. The information of 90 columns is as follows.         
+
+  *Table 1: The following table indicates the available features and the sensor underlying the raw data for each feature. Five features are given as a feature set for each sensor, representing spectral information in non-overlapping frequency bands for increasing frequencies. The k-th (k=1...5) feature in each feature set is computed in the same way across sensors.*   
+
+| Feature set per sensor | Sensors |
+| ---------------------- | ------- |
+| f101 - f105            | azs_1   |
+| f106 - f110            | azp_1r  |
+| f111 - f115            | azp_1l  |
+| f116 - f120            | azp_2r  |
+| f121 - f125            | azp_2l  |
+| f126 - f130            | az_1r   |
+| f131 - f13             | az_1l   |
+| f136 - f140            | az_2r   |
+| f141 - f145            | az_2l   |
+| f146 - f150            | azs_2   |
+| f151 - f155            | azp_3r  |
+| f156 - f160            | azp_3l  |
+| f161 - f165            | azp_4r  |
+| f166 - f170            | azp_4l  |
+| f171 - f175            | az_3r   |
+| f176 - f180            | az_3l   |
+| f181 - f185            | az_4r   |
+| f186 - f190            | az_4l   |
+
+​	*Table 2: Experiments provided.* 
+
+| ExperimentID | Payload | Speed | Track | State   |
+| ------------ | ------- | ----- | ----- | ------- |
+| 1            | 1.02    | 1.04  | 1     | healthy |
+| 2            | 1.96    | 1.03  | 1     | healthy |
+| 3            | 0.89    | 1.03  | 2     | healthy |
+| ...          |         |       |       |         |
+
+​	*Table 3: Faults of interest.*    
+
+| Number | Bogie            | Component        | Position |
+| :----- | :--------------- | :--------------- | :------- |
+| 1      | leading          | Primary Spring   | *czp_1r* |
+| 2      | Primary Spring   | *czp_1l*         |          |
+| 3      | Primary Spring   | *czp_2r*         |          |
+| 4      | Primary Spring   | *czp_2l*         |          |
+| 5      | Primary Damper   | *dzp_1r*         |          |
+| 6      | Primary Damper   | *dzp_1l*         |          |
+| 7      | Primary Damper   | *dzp_2r*         |          |
+| 8      | Primary Damper   | *dzp_2l*         |          |
+| 9      | Secondary Spring | *czs_1*          |          |
+| 10     | Secondary Damper | *dzs_1r*         |          |
+| 11     | Secondary Damper | *dzs_1l*         |          |
+| 12     | trailing         | *Primary Spring* | *czp_3r* |
+| 13     | Primary Spring   | *czp_3l*         |          |
+| 14     | Primary Spring   | *czp_4r*         |          |
+| 15     | Primary Spring   | *czp_4l*         |          |
+| 16     | Primary Damper   | *dzp_3r*         |          |
+| 17     | Primary Damper   | *dzp_3l*         |          |
+| 18     | Primary Damper   | *dzp_4r*         |          |
+| 19     | Primary Damper   | *dzp_4l*         |          |
+| 20     | Secondary Spring | *czs_2*          |          |
+| 21     | Secondary Damper | *dzs_2r*         |          |
+| 22     | Secondary Damper | *dzs_2l*         |          |
+
+__Test data__    
+
+- The test data consists of 200 csv files. It consists of 24 columns. Testing data will be given in a collection of files "*Testing-ddd.csv*" analogous to the training data. It includes both nominal and faulty regimes of operation. No fault number or position information will be provided for faulty regimes.           
+
+#### Objectives          
+
+1. The primary objective of this challenge is to **predict faulty regimes of operation** of a train car using the data provided and physics-based modeling methods (e.g. inspired in any relevant reference such as the ones included in this document)       
+
+#### Paper     
+
+1. T. X. Mei & X. J. Ding (2009): Condition monitoring of rail vehicle suspensions based on changes in system dynamic interactions, Vehicle System Dynamics, 47:9, 1167-1181.  
+2. S. Bruni , J. Vinolas , M. Berg , O. Polach & S. Stichel (2011): Modelling of suspension components in a rail vehicle dynamics context. , Vehicle System Dynamics, 49:7, 1021-1072.  
+3. S. Iwnicki (1998): Manchester Benchmark for Rail Vehicle Simulation. Vehicle System Dynamics, 30:7, 295-313.     
+
+##### Data Download Link     
+
+<https://www.phmsociety.org/events/conference/phm/17/data-challenge>     
+
+Data Capacity(Compressed) : 19.38 MB        
+
+
+
+## Appliance Energy
+
+## [Appliances energy prediction Data Set](https://archive.ics.uci.edu/ml/datasets/Appliances+energy+prediction)
+
+11.4MB
+
+Experimental data used to create regression models of appliance energy use in a low energy building
+
+ ![](https://img.shields.io/badge/sector-power-skyblue.svg)   ![](https://img.shields.io/badge/house_environment-gray.svg)  ![](https://img.shields.io/badge/label-yes-blue.svg) ![](https://img.shields.io/badge/time--series-yes-blue.svg)  ![](<https://img.shields.io/badge/experimental+real-green.svg>)
+
+#### Data Set Information
+| Data Set Characteristics  | Attribute Characteristics | Associated Tasks |
+| ------------------------- | ------------------------- | ---------------- |
+| Multivariate, Time-Series | Real                      | Regression       |
+
+| Number of Instances | Number of Attributes |      |      |
+| ------------------- | -------------------- | ---- | ---- |
+| 19735               | 29                   |      |      |
+
+The data set is at 10 min for about 4.5 months. The house temperature and humidity conditions were monitored with a ZigBee wireless sensor network. Each wireless node transmitted the temperature and humidity conditions around 3.3 min. Then, the wireless data was averaged for 10 minutes periods. The energy data was logged every 10 minutes with m-bus energy meters. Weather from the nearest airport weather station (Chievres Airport, Belgium) was downloaded from a public data set from Reliable Prognosis (rp5.ru), and merged together with the experimental data sets using the date and time column. Two random variables have been included in the data set for testing the regression models and to filter out non predictive attributes (parameters).
+
+#### Variables
+
+date : time year-month-day hour:minute:second  
+Appliances : energy use in Wh(target)  
+lights : energy use of light fixtures in the house in Wh  
+T1 : Temperature in kitchen area, in Celsius  
+RH_1 : Humidity in kitchen area, in %  
+T2 : Temperature in living room area, in Celsius  
+RH_2 : Humidity in living room area, in %  
+T3 : Temperature in laundry room area  
+RH_3 : Humidity in laundry room area, in %  
+T4 : Temperature in office room, in Celsius  
+RH_4 : Humidity in office room, in %  
+T5 : Temperature in bathroom, in Celsius  
+RH_5 : Humidity in bathroom, in %  
+T6 : Temperature outside the building (north side), in Celsius  
+RH_6 : Humidity outside the building (north side), in %  
+T7 : Temperature in ironing room , in Celsius  
+RH_7 : Humidity in ironing room, in %  
+T8 : Temperature in teenager room 2, in Celsius  
+RH_8 : Humidity in teenager room 2, in %  
+T9 : Temperature in parents room, in Celsius  
+RH_9 : Humidity in parents room, in %  
+T_out : Temperature outside (from Chievres weather station), in Celsius  
+press_mm_hg : Pressure (from Chievres weather station), in mm Hg  
+RH_out : Humidity outside (from Chievres weather station), in %  
+Windspeed : (from Chievres weather station), in m/s  
+Visibility : (from Chievres weather station), in km  
+Tdewpoint : (from Chievres weather station), Â°C  
+rv1 : Random variable 1, nondimensional  
+rv2 : Random variable 2, nondimensional  
+
+#### Paper
+
+[Data driven prediction models of energy use of appliances in a low-energy house](https://www.sciencedirect.com/science/article/pii/S0378778816308970?via%3Dihub)
+
+**Highlights**
+
+- The appliances [energy consumption](https://www.sciencedirect.com/topics/earth-and-planetary-sciences/energy-consumption) prediction in a low energy house has been studied.
+
+- Weather data from a nearby station was found to improve the prediction.
+
+- Pressure, [air temperature](https://www.sciencedirect.com/topics/engineering/air-temperature) and wind speed are important parameters in the prediction.
+
+- Data from a WSN that [measures temperature](https://www.sciencedirect.com/topics/engineering/measure-temperature) and humidity increase the pred. -accuracy.
+
+- From the WSN, the kitchen, laundry and living room data ranked high in importance.
+
+**Abstract**
+
+This paper presents and describes a data-driven prediction model for energy use of appliances. The used data includes temperature, humidity sensor measurements from the wireless network, weather at nearby airport stations, and energy usage records from lighting fixtures.
+
+The paper discusses data filtering to remove non-predictive parameters and feature ranking. Four statistical models were trained with repeated cross validation and evaluated in a testing set: (a) multiple linear regression, (b) support vector machine with radial kernel, (c) random forest and (d) gradient boosting machines (GBM). 
+
+The best model (GBM) was able to explain 97% of the variance (*R*2) in the training set and with 57% in the testing set when using all the predictors. From the wireless network, the data from the kitchen, laundry and living room were ranked the highest in importance for the energy prediction. The prediction models with only the weather data, selected the atmospheric pressure (which is correlated to wind speed) as the most relevant weather data variable in the prediction. Therefore, atmospheric pressure may be important to include in energy prediction models and for building performance modeling.
+
+#### Citation Request:
+
+Luis M. Candanedo, Veronique Feldheim, Dominique Deramaix, Data driven prediction models of energy use of appliances in a low-energy house, Energy and Buildings, Volume 140, 1 April 2017, Pages 81-97, ISSN 0378-7788, [[Web Link\]](http://dx.doi.org/10.1016/j.enbuild.2017.01.083).
+
+
+## BLUE dataset
+
+## Power  
+### [BLUE dataset](<http://portoalegre.andrew.cmu.edu:88/BLUED/>)   
+
+ The dataset consists of voltage and current measurements for a single-family residence in the United States, sampled at 12 kHz for a whole week.  Every state transition of each appliance in the
+home during this time was labeled and time-stamped, providing the necessary ground truth for the evaluation of event-based algorithms. 
+
+![](https://img.shields.io/badge/sector-semicon-blue.svg)  ![](https://img.shields.io/badge/sector-power-lightblue.svg)  ![](https://img.shields.io/badge/labeled-yes-blue.svg)![](https://img.shields.io/badge/time--series-yes-blue.svg)   
+
+#### Data Set Information         
+
+| Index | Name                                               | Average Power Consumption (W) | Number of events | Phase |
+| ----- | -------------------------------------------------- | ----------------------------- | ---------------- | ----- |
+| 1     | Desktop Lamp                                       | 30                            | 26               | B     |
+| 2     | Tall Desk Lamp                                     | 30                            | 25               | B     |
+| 3     | Garage Door                                        | 530                           | 24               | B     |
+| 4     | Washing Machine                                    | 130-700                       | 95               | B     |
+| 5     | Kitchen music                                      | 0                             | -                | -     |
+| 6     | Kitchen Aid Chopper                                | 1500                          | 16               | A     |
+| 7     | Tea Kettle                                         | -                             | 0                | -     |
+| 8     | Toaster Oven                                       | -                             | 0                | -     |
+| 9     | Fridge                                             | 120                           | 616              | A     |
+| 10    | A/V Living room                                    | 45                            | 8                | B     |
+| 11    | Sub-woofer Living<br/>room                         | 0                             | -                | -     |
+| 12    | Computer A                                         | 60                            | 45               | B     |
+| 13    | Laptop B                                           | 40                            | 14               | B     |
+| 14    | Dehumidifier                                       | -                             | 0                | -     |
+| 15    | Vacuum Cleaner                                     | -                             | 0                | -     |
+| 16    | DVR, A/V Receiver,<br/>Blueray Player<br/>Basement | 55                            | 34               | B     |
+| 17    | Sub-woofer<br/>Basement                            | 0                             | -                | -     |
+| 18    | Apple TV<br/>Basement                              | 0                             | -                | -     |
+| 19    | Air Compressor                                     | 1130                          | 20               | A     |
+| 20    | LCD Monitor A                                      | 35                            | 77               | B     |
+| 21    | TV Basement                                        | 190                           | 54               | B     |
+| 22    | Harddrive B                                        | -                             | 0                | -     |
+| 23    | Printer                                            | 930                           | 150              | B     |
+| 24    | Hair Dryer                                         | 1600                          | 8                | A     |
+| 25    | Iron                                               | 1400                          | 40               | B     |
+| 26    | Empty living room<br/>socket                       | 60                            | 2                | B     |
+| 27    | Empty living room<br/>socket                       | -                             | 0                | -     |
+| 28    | Monitor B                                          | 40                            | 150              | B     |
+| 29    | Backyard lights                                    | 60                            | 16               | A     |
+| 30    | Washroom light                                     | 110                           | 6                | A     |
+| 31    | Office Lights                                      | 30                            | 54               | B     |
+| 32    | Closet lights                                      | 20                            | 22               | B     |
+| 33    | Upstairs hallway<br/>light                         | 25                            | 17               | B     |
+| 34    | Hallways Stairs<br/>lights                         | 110                           | 58               | B     |
+| 35    | Kitchen Hallway<br/>light                          | 15                            | 6                | B     |
+| 36    | Kitchen overhead<br/>light                         | 65                            | 56               | B     |
+| 37    | Bathroom upstairs<br/>lights                       | 65                            | 98               | A     |
+| 38    | Dining room<br/>overhead light                     | 65                            | 32               | B     |
+| 39    | Bedroom Lights                                     | 190                           | 19               | A     |
+| 40    | Basement Light                                     | 35                            | 39               | B     |
+| 41    | Microwave                                          | 1550                          | 70               | B     |
+| 42    | Air Conditioner                                    | -                             | 0                | A+B   |
+| 43    | Dryer                                              | -                             | 0                | A+B   |
+
+Table shows the list of appliances in the home that were monitored, along with their average power consumption (estimated from turn-on events), the number of events associated with them and the phase (A or B) that they were feeding from.   
+
+#### Paper     
+
+1. [BLUED: A Fully Labeled Public Dataset for Event-Based
+   Non-Intrusive Load Monitoring Research](<https://pdfs.semanticscholar.org/ed1b/8fc3074ec5d7bb7cf83e233d3b130637706f.pdf>)          
+
+#### Citations    
+
+The BibTeX reference for the paper is the following:  
+
+@inproceedings{anderson_blued:_2012, 
+  address = {Beijing, China},
+  title = {{BLUED:} A Fully Labeled Public Dataset for {Event-Based} {Non-Intrusive} Load Monitoring Research},
+  booktitle = {Proceedings of the 2nd {KDD} Workshop on Data Mining Applications in Sustainability {(SustKDD)}},
+  author = {Anderson, Kyle and Ocneanu, Adrian and Benitez, Diego and Carlson, Derrick and Rowe, Anthony and Berges, Mario},
+  month = aug, year = {2012} },  
+
+
+##### Data Download Link   
+[http://archive.ics.uci.edu/ml/machine-learning-databases/secom/](http://archive.ics.uci.edu/ml/machine-learning-databases/secom/)    
+
+Data Capacity     
+
+- [Data Dictionary](http://portoalegre.andrew.cmu.edu:88/BLUED/location_001_datadictionary.txt) [txt] [1 kB]  
+- [Dataset 001](http://portoalegre.andrew.cmu.edu:88/BLUED/location_001_dataset_001.tar) [bzip, tar] [3.5 GB]  
+- [Dataset 002](http://portoalegre.andrew.cmu.edu:88/BLUED/location_001_dataset_002.tar) [bzip, tar] [3.5 GB]  
+- [Dataset 003](http://portoalegre.andrew.cmu.edu:88/BLUED/location_001_dataset_003.tar) [bzip, tar] [3.5 GB]  
+- [Dataset 004](http://portoalegre.andrew.cmu.edu:88/BLUED/location_001_dataset_004.tar) [bzip, tar] [3.5 GB]  
+- [Dataset 005](http://portoalegre.andrew.cmu.edu:88/BLUED/location_001_dataset_005.tar) [bzip, tar] [3.5 GB]  
+- [Dataset 006](http://portoalegre.andrew.cmu.edu:88/BLUED/location_001_dataset_006.tar) [bzip, tar] [3.5 GB]  
+- [Dataset 007](http://portoalegre.andrew.cmu.edu:88/BLUED/location_001_dataset_007.tar) [bzip, tar] [3.5 GB]  
+- [Dataset 008](http://portoalegre.andrew.cmu.edu:88/BLUED/location_001_dataset_008.tar) [bzip, tar] [3.5 GB]  
+- [Dataset 009](http://portoalegre.andrew.cmu.edu:88/BLUED/location_001_dataset_009.tar) [bzip, tar] [3.5 GB]  
+- [Dataset 010](http://portoalegre.andrew.cmu.edu:88/BLUED/location_001_dataset_010.tar) [bzip, tar] [3.5 GB]  
+- [Dataset 011](http://portoalegre.andrew.cmu.edu:88/BLUED/location_001_dataset_011.tar) [bzip, tar] [3.5 GB]  
+- [Dataset 012](http://portoalegre.andrew.cmu.edu:88/BLUED/location_001_dataset_012.tar) [bzip, tar] [3.5 GB]  
+- [Dataset 013](http://portoalegre.andrew.cmu.edu:88/BLUED/location_001_dataset_013.tar) [bzip, tar] [3.5 GB]  
+- [Dataset 014](http://portoalegre.andrew.cmu.edu:88/BLUED/location_001_dataset_014.tar) [bzip, tar] [3.5 GB]  
+- [Dataset 015](http://portoalegre.andrew.cmu.edu:88/BLUED/location_001_dataset_015.tar) [bzip, tar] [3.5 GB]  
+- [Dataset 016](http://portoalegre.andrew.cmu.edu:88/BLUED/location_001_dataset_016.tar) [bzip, tar] [3.5 GB]  
+
+## Hill-Valley
+
+## [Hill-Valley Data Set](https://archive.ics.uci.edu/ml/datasets/Hill-Valley)
+
+Hill_Valley_with_noise_Training.data (417.4KB)
+Hill_Valley_with_noise_Testing.data (420.9KB)
+Hill_Valley_without_noise_Training.data (722.7KB)
+Hill_Valley_without_noise_Testing.data (722.8KB)
+
+This is NOT a manufacturing dataset, but looks good for testing pattern detection methods.
+
+Two simulated data sets, with and without noise. Each record represents 100 points on a twodimensional graph, where the algorithm must classify the series as either a Hill (a “bump” in the terrain) or a Valley (a “dip” in the terrain).
+
+![](https://img.shields.io/badge/sector-etc-black.svg) ![](https://img.shields.io/badge/labeled-yes-blue.svg) ![](<https://img.shields.io/badge/simulation-no-red.svg>) ![](https://img.shields.io/badge/time--series-no-red.svg)
+
+#### Data Set Information:
+
+| Data Set Characteristics | Attribute Characteristics | Associated Tasks |
+| ------------------------ | ------------------------- | ---------------- |
+| Sequential               | Real                      | Classification   |
+
+| Number of Instances | Number of Attributes | Number of Classes |      |
+| ------------------- | -------------------- | ----------------- | ---- |
+| 1212                | 101                  | 2                 |      |
+
+feature : V1~V100, Class
+
+- 100 predictive attributes, 1 goal attribute
+
+- 1-100 : Labeled x##. Floating point values (numeric)
+- 101 : Labeled class. Binary {0,1} representing {valley,hill} (nominal)
+
+number of instance
+
+- training 606, test 606
+
+Each record represents 100 points on a two-dimensional graph. When plotted in order (from 1 through 100) as the Y co-ordinate, the points will create either a Hill (a “bump” in the terrain) or a Valley (a “dip” in the terrain). 
+
+There are six files, as follows: 
+
+(a) Hill_Valley_without_noise_Training.data (class distribution : 305/301)  
+(b) Hill_Valley_without_noise_Testing.data (295/311)
+
+These first two datasets (without noise) are a training/testing set pair where the hills or valleys have a smooth transition. 
+
+(c) Hill_Valley_with_noise_Training.data (307/299)  
+(d) Hill_Valley_with_noise_Testing.data (299/307)
+
+These next two datasets (with noise) are a training/testing set pair where the terrain is uneven, and the hill or valley is not as obvious when viewed closely. 
+
+(e) Hill_Valley_sample_arff.text 
+
+The sample ARFF file is useful for setting up experiments, but is not necessary.
+
+1~100 is numeric, class is {0,1}
+
+(f) Hill_Valley_visual_examples.jpg 
+
+This graphic file shows two example instances from the data. 
+
+- Example of 'valley' instance from Hill-Valley without noise
+- Example of 'hill' instance from Hill-Valley dataset with noise
+
+#### Variables
+
+1-100: Labeled “X##”. Floating point values (numeric) 
+101: Labeled “class”. Binary {0, 1} representing {valley, hill} 
+
+task : supervised classification on hill-valley
+
+#### Citation Request:
+
+Please refer to the Machine Learning Repository's [citation policy](https://archive.ics.uci.edu/ml/citation_policy.html)
+
+**reference**
+
+https://www.simonwenkel.com/2018/08/19/revisiting_ml_hill_valley_detection.html
+
+https://www.openml.org/d/1566
+
+
+## Machine failure
+
+# [Machine Failure](https://bigml.com/dashboard/datasets)
+
+
+
+## PHM08 Challenge on this dataset
+
+## Mechanical  
+### [PHM08 Challenge on this dataset](https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/)  
+
+Similar to C-MAPSS data, but the only difference: C-MAPSS data has true RUL values, whereas this dataset does not have RUL values.    
+
+Data sets consist of multiple multivariate time series. Each data set is further divided into training and test subsets. Each time series is from a different engine – i.e., the data can be considered to be from a fleet of engines of the same type. Each engine starts with different degrees of initial wear and manufacturing variation which is unknown to the user. This wear and variation is considered normal, i.e., it is not considered a fault condition. There are three operational settings that have a substantial effect on engine performance. These settings are also included in the data. The data are contaminated with sensor noise.
+The engine is operating normally at the start of each time series, and starts to degrade at some point during the series. In the training set, the degradation grows in magnitude until a predefined threshold is reached beyond which it is not preferable to operate the engine. In the test set, the time series ends some time prior to complete degradation.  
+The objective of the competition is to predict the number of remaining operational cycles before in the test set, i.e., the number of operational cycles after the last cycle that the engine will continue to operate properly.  
+The data are provided as a zip-compressed text file with 26 columns of numbers, separated by spaces. Each row is a snapshot of data taken during a single operational cycle; each column is a different variable.  
+
+![](https://img.shields.io/badge/competition-gray.svg)
+![](https://img.shields.io/badge/scoring_and_ranking-gray.svg) ![](<https://img.shields.io/badge/simulation-yes-blue.svg>)      
+
+#### Data Set Information   
+
+- Attribute Explanation   
+
+Each dataset has 26 columns.   
+The columns correspond to:  
+
+1)	unit number  
+2)	time, in cycles  
+3)	operational setting 1  
+4)	operational setting 2  
+5)	operational setting 3  
+6)	sensor measurement  1  
+7)	sensor measurement  2  
+...
+26)	sensor measurement  26   
+
+
+- Data Set  
+  train.txt, test.txt, final_test.txt     
+  Train trjectories: 218   
+  Test trajectories: 218   
+  final_test trajectoris: 435    
+  'Train / Test' is used to create the model, and 'finally final_test' to calculate the final score.    
+  (Once algorithms are trained to satisfaction, users can apply them to the final test dataset contained in the file named final_test.txt. )  
+  The final score is the weighted sum of the RUL errors.       
+
+#### Paper   
+
+1. [Long Short-Term Memory Network for Remaining
+   Useful Life Estimation](<http://www.hitachi-america.us/rd/about_us/bdl/docs/LSTM_RUL.PDF>)    
+
+   keywords: LSTM, Multi-Layer Perceptron (MLP), Support Vector Regression (SVR), Relevance Vector Regression (RVR) and Convolutional Neural Network (CNN)    
+
+
+##### Data Folder Link   
+[https://ti.arc.nasa.gov/c/13/](https://ti.arc.nasa.gov/c/13/)    
+
+ Data Capacity(Compressed):  
+
+5.57MB  
+
+## SECOM
+
+## Semicon  
+### [SECOM](http://archive.ics.uci.edu/ml/datasets/secom): Semiconductor manufacturing process data.    
+
+FAB data collected from 590 sensors in the semiconductor manufacturing process. Data consists of two files, 'secom.data' and 'secom_labels.data'. The 'secom.data' file consists of 1567 * 590 matrices with 590 features and 1567 examples. 'secom_labels.data' file contains classifications value and data time stamp value for each 1567 data. In 'secom_labels.data' file, -1 indicates pass (normal) and 1 indicates fail (abnormal).       
+
+![](https://img.shields.io/badge/sector-semicon-blue.svg)
+![](https://img.shields.io/badge/labeled-yes-blue.svg)
+![](https://img.shields.io/badge/time--series-yes-blue.svg)
+![](https://img.shields.io/badge/feature_selection-gray.svg) ![](<https://img.shields.io/badge/simulation-no-red.svg>)         
+
+#### Data Set Information      
+
+
+- Note      
+
+There is no distinction between training data and test data in the data file.   
+590 __variables__ -> 590 __sensors__      
+[On the UCI homepage](http://archive.ics.uci.edu/ml/datasets/secom), the number of features was specified as 591, but as a result of directly loading the data, the shape of 'secom.data' converted to dataframe had a shape of (1567, 590). Big Data Technologies and Applications (Springer International Publishing. (2018)) also identified 590 features.      
+
+- Data Summary       
+
+| Data Set Characteristics | Attribute Characteristics | Associated Tasks                   |
+| ------------------------ | ------------------------- | ---------------------------------- |
+| Multivariate             | Real                      | Classification, Casual - Discovery |
+
+| Number of Instances | Number of Attributes | Number of Missing Values(NaN) in secom.data |
+| ------------------- | -------------------- | ------------------------------------------- |
+| 1567                | 590                  | 41951(# of NA in 1567 by 590 matrix)        |
+
+- \# of each class    
+
+| Number of pass | Number of fail | total |
+| -------------- | -------------- | ----- |
+| 1463           | 104            | 1567  |
+
+#### Paper     
+
+1. [redictive Models for Equipment Fault Detection in the Semiconductor Manufacturing Process](http://www.ijetch.org/vol8/898-T10023.pdf)    
+2. [Machine learning for sensor-based manufacturing processes](https://ieeexplore.ieee.org/document/8116997) : keywords: feature selection, random forest, gradient boosted trees , PCA, Logistic Regression    
+3. [Rare Class Discovery Techniques for Highly Imbalanced Data](<http://www.iaeng.org/publication/IMECS2013/IMECS2013_pp269-272.pdf>)     
+4. [Feature Selection and Boosting Techniques to Improve Fault Detection Accuracy in the Semiconductor Manufacturing Process](<http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.421.3370&rep=rep1&type=pdf>)      
+5. [Data Imbalance Problem solving for SMOTE Based Oversampling: Study on Fault Detection Prediction
+   Model in Semiconductor Manufacturing Process](<https://pdfs.semanticscholar.org/df3b/537f5912bef4dca1659bae8ef360bbf69782.pdf>)        
+
+#### Citations    
+
+McCann, M. and Johnston, A. (2008). UCI Machine Learning Repository [<http://archive.ics.uci.edu/ml/datasets/secom>].        
+
+
+##### Data Download Link   
+[http://archive.ics.uci.edu/ml/machine-learning-databases/secom/](http://archive.ics.uci.edu/ml/machine-learning-databases/secom/)    
+
+Data Capacity     
+
+secom.data : 5.13MB    
+
+secom.names : 5KB    
+
+secom_labels.data :   40KB   
+
+## Chemical Detection Platform
+
+## Chemical Detection Platform    
+### [Gas sensor arrays in open sampling settings Data Set](https://archive.ics.uci.edu/ml/datasets/Gas+sensor+arrays+in+open+sampling+settings)
+
+The dataset contains 18000 time-series recordings from a chemical detection platform at six different locations in a wind tunnel facility in response to ten high-priority chemical gaseous substances.  
+The resulting dataset induces a **ten-class** gas discrimination problem   
+The dataset was gathered from December 2010 to April 2012(16 months) in wind tunnel research test-bed facility situated at the BioCircuits Institute, University of California San Diego.    
+
+![](https://img.shields.io/badge/sector-chemical-red.svg)
+![](https://img.shields.io/badge/labeled-yes-blue.svg)
+![](https://img.shields.io/badge/time--series-yes-blue.svg) ![](<https://img.shields.io/badge/simulation-yes-blue.svg>)     
+
+#### Data Set Information    
+
+| Data Set Characteristics  | Attribute Characteristics | Associated Tasks |
+| ------------------------- | ------------------------- | ---------------- |
+| Multivariate, Time-Series | Real                      | Classification   |
+
+| Number of Instances | Number of Attributes | Number of Missing Values(NaN/not available) |
+| ------------------- | -------------------- | ------------------------------------------- |
+| 18,000              | 1,950,000            | ?                                           |
+
+
+  - Number of instances:  
+    18,000 times-series measurements recorded from a 72 metal-oxide gas sensor array-based chemical detection platform.  
+  
+  - Number of attributes:  
+    Every measurement contains 72 time-series recorded during 260 seconds, each collected at a sample rate of 100Hz (samples per second).
+    The dataset also contains time, temperature, and relative humidity information.  
+    72 metal-oxide gas sensors + time, temperature, relative humidity information = 75 measurement types  
+    The resulting dataset ultimately includes 75-time series composed of 26000 points.  
+    Number of Attributes = 75 * 260* 100 = 1,950,000     
+  
+  - 10 classes gas name:   
+    Acetone, Acetaldehyde, Ammonia, Butanol, Ethylene, Methane, Methanol, Carbon Monoxide, Benzene, Toluene     
+  
+  - The goal of this data:  
+    Identify and discriminate the mentioned chemical hazards at relevant concentrations regardless of the location of the sensory system platform within the annotated wind tunnel research facility as well as the environmental and parametric conditions induced in the setting (Please see manuscript for more details).    
+
+
+#### Attribute Information  
+- Explanation of folder name  
+
+  - Data consists of 11 folders: number of measurements per chemical class identity + nomial concentration   
+    ex. Toluene_200 = gas identity is 'Toluene', measured at a concentration of 200 ppmv       
+  - Each of 11 folders consists of 6 subfolders.: represent the line location within the test area of the wind tunnel  
+    ex. L1 means location 1, L6 means location 6 (where L1 is closest to the gas source)    
+  - Each of six subfolders consists of 300 files: it has a number of measurements measured at the corresponding location in the tunnel
+    Meaning of each file name = log information of each of the measurements  
+    ex.  
+    201106060617_board_setPoint_500V_fan_setPoint_060_mfc_setPoint_Toluene_200ppm_p7  
+    201106060617 = year, month, day, time  
+    board_setPoint_500V = fixed operating temperature value   
+    fan_setPoint_060 = set-point value of the nomial rotational speeds of the multiple-step motor-driven exhaust fan utilized    
+    mfc_setPoint_Tolune_200ppm = analyte identity and concentration value for each particular measurement   
+    p7 = line point location at which the chemo-sensory platform was located in the wind tunnel  
+
+- Meaning of each column     
+  - Each data file has 92 columns. The meaning of each column is as follows.    
+  - For example, if line 1 is,  
+    22250 0 0 100 100 100 103 103 105 22.22 63.43 1 476 555 803 497 775 885 873 843 1 346 545 635 616 571 552 773 745 1 397 509 660 638     755 744 745 657 1 420 510 525 531 504 650 719 715 1 2201 449 652 1228 847 654 850 737 1 370 459 650 445 756 773 847 803 1 345 457 587   554 757 704 769 818 1 354 407 499 696 786 686 757 733 1 339 418 547 567 653 573 773 84  
+    The meaning of the value corresponding to each column is as follows  
+    22250 = measured at 22.25 seconds  
+    0 0 = set point, measured value of the fan speed  
+    100 100 100 103 103 105 = set point, actual measured values of the MFC  
+    22.22 63.43 = temperature, humidity values  
+    1 = boundary between each sensor module board  
+    remaining 80 columns = actual time series values for each measurement -> The eight numbers 1 of them represent the boundary and the remaining 72 represent the 72 time series mentioned above.       
+#### Paper          
+
+N/A       
+
+##### Ambiguous Parts     
+\- The number of columns is 92 in each of the data files. The number of rows is different.   
+\- 75 time-series(72 gas sensor + time, temperature, relative humidity information) * 26000 = 1950000    
+
+Why '1950000' is the number of attributes(This is ambiguous. 72 gas sensors, time, temperature and humidity total 75 should be attribute)    
+
+Why 1950000 is the number of attributes?  
+
+Is there NA? -> The data file was too large to verify.       
+
+#### Citations   
+
+Alexander Vergara, Jordi Fonollosa, Jonas Mahiques, Marco Trincavelli, Nikolai Rulkov, RamÃ³n Huerta, On the performance of gas sensor arrays in open sampling systems using Inhibitory Support Vector Machines, Sensors and Actuators B: Chemical, Available online 18 May 2013, ISSN 0925-4005, 10.1016/j.snb.2013.05.027. [(Web Link)](<https://www.sciencedirect.com/science/article/pii/S092540051300590X>)   
+
+##### Data Folder Link    
+
+[https://archive.ics.uci.edu/ml/machine-learning-databases/00251/](https://archive.ics.uci.edu/ml/machine-learning-databases/00251/)  
+
+Data Capacity(Compressed)     
+
+7.8GB  
+

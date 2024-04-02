@@ -1,0 +1,105 @@
+KDD Cup 1997 data 
+
+https://www.kdd.org/kdd
+
+KDD Cup 1998 data 
+
+https://archive.ics.uci.edu/ml/datasets/KDD+Cup+1998+Data
+
+KDD Cup 1999 data 
+
+https://archive.ics.uci.edu/ml/datasets/kdd+cup+1999+data
+
+KDD Cup 2000 data 
+
+https://www.kdd.org/kdd
+
+KDD Cup 2001 data 
+
+http://pages.cs.wisc.edu/~dpage/kddcup2001/
+
+KDD Cup 2002 data 
+
+https://www.biostat.wisc.edu/~craven/kddcup/train.html
+
+KDD Cup 2003 data 
+
+https://www.cs.cornell.edu/projects/kddcup/datasets.html
+
+KDD Cup 2004 data 
+
+https://www.kdd.org/kdd
+
+KDD Cup 2005 data 
+
+없음
+
+KDD Cup 2006~2010 data
+
+2006 
+
+2007 
+
+2008 
+
+2009 
+
+2010 
+
+https://semanticommunity.info/Data_Science/KDD_Cup
+
+KDD Cup 2011 data 
+
+https://mr.media
+
+(신용카드 등록하라는데 무료라고 되있음)
+
+KDD Cup 2012 Track1 data 
+
+https://www.kaggle.com/c/kddcup2012
+
+KDD Cup 2012 Track2 data 
+
+https://www.kaggle.com/c/kddcup2012
+
+KDD Cup 2013 Track1 data 
+
+https://www.kaggle.com/c/kdd
+
+KDD Cup 2013 Track2 data 
+
+https://www.kaggle.com/c/kdd
+
+KDD Cup 2014 data 
+
+https://www.kaggle.com/c/kdd
+
+KDD Cup 2015 data 
+
+http://data
+
+KDD Cup 2016 data 
+
+없음
+
+KDD Cup 2017 data 
+
+https://github.com/chenzeyuczy/KDD2017/tree/master/dataSets
+
+https://tianchi.aliyun.com/competition/entrance/231597/information
+
+
+
+KDD Cup 2018 data 
+
+https://biendata.com/competition/kdd_2018/data/KDD 
+
+Cup 2019 data
+
+https://www.kdd.org/kdd2019/kdd
+
+1. Regular Machine Learning Competition Track : Context
+2. Automated Machine Learning Competition Track : **binary classification problems for temporal relational data**.(데이터 종류에 대한 언급은 없는듯)
+
+2005,2016는 없는듯
+
