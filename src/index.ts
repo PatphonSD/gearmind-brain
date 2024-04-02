@@ -1,4 +1,4 @@
-import { Document, VectorStoreIndex } from "llamaindex";
+import { Document, VectorStoreIndex , storageContextFromDefaults } from "llamaindex";
 import init from "./init";
 import { getEssay } from "./essay/get-essay";
 
@@ -9,9 +9,13 @@ async function main() {
 
   const document = new Document({ text: essay, id_: "essay" });
 
-  // Load and index documents
-  const index = await VectorStoreIndex.fromDocuments([document]);
-
+  const storageContext = await storageContextFromDefaults({
+    persistDir: "./storage",
+  });
+  const index = await VectorStoreIndex.fromDocuments([document], {
+    storageContext,
+  });
+  
   // get retriever
   const retriever = index.asRetriever();
 
