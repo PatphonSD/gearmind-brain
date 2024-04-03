@@ -5,34 +5,44 @@ import { getEssay } from "./essay/get-essay";
 init();
 
 async function main() {
-  const essay = await getEssay();
+ // ดึงเนื้อหาเรียงความ
+ const essay = await getEssay();
 
-  const document = new Document({ text: essay, id_: "essay" });
+ // สร้าง Document object จากเนื้อหาเรียงความ 
+ // ตั้ง ID ว่า "essay"
+ const document = new Document({ text: essay, id_: "essay" });
 
-  const storageContext = await storageContextFromDefaults({
-    persistDir: "./storage",
-  });
-  const index = await VectorStoreIndex.fromDocuments([document], {
-    storageContext,
-  });
-  
-  // get retriever
-  const retriever = index.asRetriever();
+ // สร้าง Storage Context 
+ // ตั้งค่า persistDir เป็น "./storage"
+ const storageContext = await storageContextFromDefaults({
+  persistDir: "./storage",
+ });
+ // สร้าง VectorStoreIndex จาก Document 
+ // ตั้งค่า Storage Context
+ const index = await VectorStoreIndex.fromDocuments([document], {
+  storageContext,
+ });
+  
+ // ดึง Retriever จาก Index
+ const retriever = index.asRetriever();
 
-  // Create a query engine
-  const queryEngine = index.asQueryEngine({
-    retriever,
-  });
+ // สร้าง Query Engine 
+ // ตั้งค่า Retriever
+ const queryEngine = index.asQueryEngine({
+  retriever,
+ });
 
-  const query = "SECOM คืออะไรครับ";
+ // ตั้งค่า Query ว่า "SECOM คืออะไรครับ"
+ const query = "SECOM คืออะไรครับ";
 
-  // Query
-  const response = await queryEngine.query({
-    query,
-  });
+ // ทำ Query
+ // รอผลลัพธ์
+ const response = await queryEngine.query({
+  query,
+ });
 
-  // Log the response
-  console.log(response.response);
+ // พิมพ์ผลลัพธ์
+ console.log(response.response);
 }
 
 main();
