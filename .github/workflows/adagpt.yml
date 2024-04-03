@@ -26,5 +26,5 @@ jobs:
       - uses: zirkelc/adagpt@v1
         name: AdaGPT
         with:
-          github_token: ${{ secrets.ADAGPT_TOKEN }}
+          github_token: ${{ secrets.GH_TOKEN }}
           openai_key: ${{ secrets.OPENAI_API_KEY }}
